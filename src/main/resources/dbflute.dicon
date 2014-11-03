@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR2.1//DTD S2Container//EN"
+    "http://www.seasar.org/dtd/components21.dtd">
+
+<components namespace="dbflute">
+    <include path="j2ee.dicon"/>
+
+    <!-- The components of DBFlute Runtime. -->
+    <component name="introduction" class="org.docksidestage.db2.dbflute.allcommon.DBFluteInitializer"/>
+    <component name="invokerAssistant" class="org.docksidestage.db2.dbflute.allcommon.ImplementedInvokerAssistant"/>
+    <component name="commonColumnAutoSetupper" class="org.docksidestage.db2.dbflute.allcommon.ImplementedCommonColumnAutoSetupper"/>
+    <component name="behaviorSelector" class="org.docksidestage.db2.dbflute.allcommon.ImplementedBehaviorSelector"/>
+    <component name="behaviorCommandInvoker" class="org.dbflute.bhv.core.BehaviorCommandInvoker"/>
+
+    <!-- The components of Behavior. -->
+    <component name="aliasExceptBhv" class="org.docksidestage.db2.dbflute.exbhv.AliasExceptBhv"/>
+    <component name="aliasMemberBhv" class="org.docksidestage.db2.dbflute.exbhv.AliasMemberBhv"/>
+    <component name="aliasMemberLoginBhv" class="org.docksidestage.db2.dbflute.exbhv.AliasMemberLoginBhv"/>
+    <component name="aliasRefExceptBhv" class="org.docksidestage.db2.dbflute.exbhv.AliasRefExceptBhv"/>
+    <component name="memberBhv" class="org.docksidestage.db2.dbflute.exbhv.MemberBhv"/>
+    <component name="memberAddressBhv" class="org.docksidestage.db2.dbflute.exbhv.MemberAddressBhv"/>
+    <component name="memberFollowingBhv" class="org.docksidestage.db2.dbflute.exbhv.MemberFollowingBhv"/>
+    <component name="memberLoginBhv" class="org.docksidestage.db2.dbflute.exbhv.MemberLoginBhv"/>
+    <component name="memberSecurityBhv" class="org.docksidestage.db2.dbflute.exbhv.MemberSecurityBhv"/>
+    <component name="memberServiceBhv" class="org.docksidestage.db2.dbflute.exbhv.MemberServiceBhv"/>
+    <component name="memberStatusBhv" class="org.docksidestage.db2.dbflute.exbhv.MemberStatusBhv"/>
+    <component name="memberWithdrawalBhv" class="org.docksidestage.db2.dbflute.exbhv.MemberWithdrawalBhv"/>
+    <component name="productBhv" class="org.docksidestage.db2.dbflute.exbhv.ProductBhv"/>
+    <component name="productCategoryBhv" class="org.docksidestage.db2.dbflute.exbhv.ProductCategoryBhv"/>
+    <component name="productStatusBhv" class="org.docksidestage.db2.dbflute.exbhv.ProductStatusBhv"/>
+    <component name="purchaseBhv" class="org.docksidestage.db2.dbflute.exbhv.PurchaseBhv"/>
+    <component name="regionBhv" class="org.docksidestage.db2.dbflute.exbhv.RegionBhv"/>
+    <component name="serviceRankBhv" class="org.docksidestage.db2.dbflute.exbhv.ServiceRankBhv"/>
+    <component name="summaryProductBhv" class="org.docksidestage.db2.dbflute.exbhv.SummaryProductBhv"/>
+    <component name="vendorCheckBhv" class="org.docksidestage.db2.dbflute.exbhv.VendorCheckBhv"/>
+    <component name="whiteRefTargetBhv" class="org.docksidestage.db2.dbflute.exbhv.WhiteRefTargetBhv"/>
+    <component name="whiteTargetBhv" class="org.docksidestage.db2.dbflute.exbhv.WhiteTargetBhv"/>
+    <component name="withdrawalReasonBhv" class="org.docksidestage.db2.dbflute.exbhv.WithdrawalReasonBhv"/>
+    <component name="summaryMemberPurchaseBhv" class="org.docksidestage.db2.dbflute.exbhv.SummaryMemberPurchaseBhv"/>
+</components>
