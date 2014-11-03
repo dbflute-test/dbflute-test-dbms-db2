@@ -37,7 +37,8 @@ public class AliasMemberDbm extends AbstractDBMeta {
     //                                       Column Property
     //                                       ---------------
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
-    {
+    { xsetupEpg(); }
+    protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((AliasMember)et).getMemberId(), (et, vl) -> ((AliasMember)et).setMemberId(cti(vl)), "memberId");
         setupEpg(_epgMap, et -> ((AliasMember)et).getMemberName(), (et, vl) -> ((AliasMember)et).setMemberName((String)vl), "memberName");
         setupEpg(_epgMap, et -> ((AliasMember)et).getMemberAccount(), (et, vl) -> ((AliasMember)et).setMemberAccount((String)vl), "memberAccount");

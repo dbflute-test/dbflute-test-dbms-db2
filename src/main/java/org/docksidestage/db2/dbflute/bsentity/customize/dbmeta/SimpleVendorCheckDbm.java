@@ -37,7 +37,8 @@ public class SimpleVendorCheckDbm extends AbstractDBMeta {
     //                                       Column Property
     //                                       ---------------
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
-    {
+    { xsetupEpg(); }
+    protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getVendorCheckId(), (et, vl) -> ((SimpleVendorCheck)et).setVendorCheckId(ctl(vl)), "vendorCheckId");
         setupEpg(_epgMap, et -> ((SimpleVendorCheck)et).getTypeOfVarchar(), (et, vl) -> ((SimpleVendorCheck)et).setTypeOfVarchar((String)vl), "typeOfVarchar");
     }

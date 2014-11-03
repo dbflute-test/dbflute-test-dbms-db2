@@ -37,7 +37,8 @@ public class AliasExceptDbm extends AbstractDBMeta {
     //                                       Column Property
     //                                       ---------------
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
-    {
+    { xsetupEpg(); }
+    protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((AliasExcept)et).getExceptId(), (et, vl) -> ((AliasExcept)et).setExceptId(ctl(vl)), "exceptId");
         setupEpg(_epgMap, et -> ((AliasExcept)et).getExceptName(), (et, vl) -> ((AliasExcept)et).setExceptName((String)vl), "exceptName");
     }

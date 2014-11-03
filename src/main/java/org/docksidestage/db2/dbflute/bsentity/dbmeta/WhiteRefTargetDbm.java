@@ -37,7 +37,8 @@ public class WhiteRefTargetDbm extends AbstractDBMeta {
     //                                       Column Property
     //                                       ---------------
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
-    {
+    { xsetupEpg(); }
+    protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((WhiteRefTarget)et).getRefTargetId(), (et, vl) -> ((WhiteRefTarget)et).setRefTargetId(ctl(vl)), "refTargetId");
         setupEpg(_epgMap, et -> ((WhiteRefTarget)et).getTargetId(), (et, vl) -> ((WhiteRefTarget)et).setTargetId(ctl(vl)), "targetId");
     }

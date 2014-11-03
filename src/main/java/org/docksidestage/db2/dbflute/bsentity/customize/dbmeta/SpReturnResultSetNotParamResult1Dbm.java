@@ -37,7 +37,8 @@ public class SpReturnResultSetNotParamResult1Dbm extends AbstractDBMeta {
     //                                       Column Property
     //                                       ---------------
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
-    {
+    { xsetupEpg(); }
+    protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SpReturnResultSetNotParamResult1)et).getMemberId(), (et, vl) -> ((SpReturnResultSetNotParamResult1)et).setMemberId(cti(vl)), "memberId");
         setupEpg(_epgMap, et -> ((SpReturnResultSetNotParamResult1)et).getMemberName(), (et, vl) -> ((SpReturnResultSetNotParamResult1)et).setMemberName((String)vl), "memberName");
         setupEpg(_epgMap, et -> ((SpReturnResultSetNotParamResult1)et).getBirthdate(), (et, vl) -> ((SpReturnResultSetNotParamResult1)et).setBirthdate((java.util.Date)vl), "birthdate");
