@@ -67,6 +67,7 @@ public class VendorFunctionTest extends UnitContainerTestCase {
                 exists = true;
             }
         }
+     // TODO jflute DB2
         assertTrue(exists);
     }
 

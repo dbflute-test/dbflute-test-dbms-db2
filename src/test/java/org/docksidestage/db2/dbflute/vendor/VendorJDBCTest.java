@@ -165,7 +165,7 @@ public class VendorJDBCTest extends UnitContainerTestCase {
                     member.setMemberAccount("same"); // same value to wait for lock
                     member.setMemberStatusCode_Formalized();
                     sleep(1000);
-                    memberBhv.varyingInsert(member, op -> op.configure(new StatementConfig().queryTimeout(1)));
+                    memberBhv.varyingInsert(member, op -> op.configure(conf -> conf.queryTimeout(1)));
                 }
                 return null;
             }

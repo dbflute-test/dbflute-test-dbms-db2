@@ -4,7 +4,7 @@ Put db2jcc.jar here
  to execute this example.
 
 dbflute-oracle-example
- |-dbflute_exampledb
+ |-dbflute_maihamadb
  |  |-dfprop
  |  |-extlib
  |     |-db2jcc.jar

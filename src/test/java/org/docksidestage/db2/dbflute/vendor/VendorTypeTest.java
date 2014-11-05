@@ -12,7 +12,6 @@ import org.dbflute.cbean.result.PagingResultBean;
 import org.dbflute.cbean.scoping.SubQuery;
 import org.dbflute.cbean.scoping.UnionQuery;
 import org.dbflute.exception.SQLFailureException;
-import org.dbflute.jdbc.StatementConfig;
 import org.dbflute.util.DfTypeUtil;
 import org.docksidestage.db2.dbflute.cbean.MemberCB;
 import org.docksidestage.db2.dbflute.cbean.MemberWithdrawalCB;
@@ -114,7 +113,7 @@ public class VendorTypeTest extends UnitContainerTestCase {
         assertTrue("list=" + page3.getSelectedList(), exists);
 
         // if scroll-able, exception
-        cb.configure(new StatementConfig().typeScrollInsensitive());
+        cb.configure(conf -> conf.typeScrollInsensitive());
         try {
             vendorCheckBhv.selectPage(cb);
 
@@ -406,7 +405,7 @@ public class VendorTypeTest extends UnitContainerTestCase {
         assertTrue("list=" + page3.getSelectedList(), exists);
 
         // if scroll-able, exception
-        cb.configure(new StatementConfig().typeScrollInsensitive());
+        cb.configure(conf -> conf.typeScrollInsensitive());
         try {
             vendorCheckBhv.selectPage(cb);
 
