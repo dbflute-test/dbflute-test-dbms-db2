@@ -15,9 +15,9 @@ import org.dbflute.hook.CallbackContext;
 import org.dbflute.hook.SqlLogHandler;
 import org.dbflute.hook.SqlLogInfo;
 import org.dbflute.jdbc.StatementConfig;
-import org.dbflute.utflute.core.thread.ThreadFireExecution;
-import org.dbflute.utflute.core.thread.ThreadFireOption;
-import org.dbflute.utflute.core.thread.ThreadFireResource;
+import org.dbflute.utflute.core.cannonball.CannonballCar;
+import org.dbflute.utflute.core.cannonball.CannonballOption;
+import org.dbflute.utflute.core.cannonball.CannonballRun;
 import org.docksidestage.db2.dbflute.bsentity.dbmeta.MemberDbm;
 import org.docksidestage.db2.dbflute.cbean.MemberCB;
 import org.docksidestage.db2.dbflute.exbhv.MemberBhv;
@@ -62,9 +62,9 @@ public class VendorJDBCTest extends UnitContainerTestCase {
         final boolean sensitive = TestingResultSetType.SCROLL_SENSITIVE.equals(resultSetType);
 
         // ## Act ##
-        threadFire(new ThreadFireExecution<Void>() {
-            public Void execute(ThreadFireResource resource) {
-                long threadId = resource.getThreadId();
+        cannonball(new CannonballRun() {
+            public void drive(CannonballCar car) {
+                long threadId = car.getThreadId();
                 log("threadId: " + threadId);
                 if (threadId % 2 == 0) {
                     PurchaseSummaryMemberPmb pmb = new PurchaseSummaryMemberPmb();
@@ -111,9 +111,8 @@ public class VendorJDBCTest extends UnitContainerTestCase {
                     member.setBirthdate(updateDate);
                     memberBhv.varyingQueryUpdate(member, cb, op -> op.allowNonQueryUpdate());
                 }
-                return null;
             }
-        }, new ThreadFireOption().commitTx().threadCount(2).repeatCount(1));
+        }, new CannonballOption().commitTx().threadCount(2).repeatCount(1));
         performNewTransaction(() -> {
             for (Member member : beforeList) {
                 log(member.getMemberName(), member.getUpdateUser());
@@ -149,8 +148,8 @@ public class VendorJDBCTest extends UnitContainerTestCase {
     //                                                                       =============
     public void test_QueryTimeout_insert() throws Exception {
         int repeatCount = 3; // repeat because DB2 reaction is fickleness
-        threadFire(new ThreadFireExecution<Void>() {
-            public Void execute(ThreadFireResource resource) {
+        cannonball(new CannonballRun() {
+            public void drive(CannonballCar car) {
                 final long threadId = Thread.currentThread().getId();
                 if (threadId % 2 == 0) {
                     Member member = new Member();
@@ -167,9 +166,8 @@ public class VendorJDBCTest extends UnitContainerTestCase {
                     sleep(1000);
                     memberBhv.varyingInsert(member, op -> op.configure(conf -> conf.queryTimeout(1)));
                 }
-                return null;
             }
-        }, new ThreadFireOption().threadCount(2).repeatCount(repeatCount).expectExceptionAny("SQLCODE=-952"));
+        }, new CannonballOption().threadCount(2).repeatCount(repeatCount).expectExceptionAny("SQLCODE=-952"));
     }
 
     // ===================================================================================
