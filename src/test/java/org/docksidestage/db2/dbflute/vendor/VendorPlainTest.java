@@ -61,7 +61,7 @@ public class VendorPlainTest extends UnitContainerTestCase {
         DateFormat df = new SimpleDateFormat("Gyyyy/MM/dd");
         log(df.format(actual.getBirthdate()));
         assertFalse(DfTypeUtil.isDateBC(actual.getBirthdate())); // cannot handle BC date
-        // TODO jflute DB2
+        // TODO jflute test: DB2 migration
         assertTrue(df.format(actual.getBirthdate()).contains("2009/12/25"));
     }
 

@@ -60,10 +60,12 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
     /*df:endQueryPath*/
 
     // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public AliasMemberDbm getDBMeta() { return AliasMemberDbm.getInstance(); }
+    public AliasMemberDbm asDBMeta() { return AliasMemberDbm.getInstance(); }
+    /** {@inheritDoc} */
+    public String asTableDbName() { return "ALIAS_MEMBER"; }
 
     // ===================================================================================
     //                                                                        New Instance
@@ -411,7 +413,7 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
     //                                                                            ========
     @Override
     protected Number doReadNextVal() {
-        String msg = "This table is NOT related to sequence: " + getTableDbName();
+        String msg = "This table is NOT related to sequence: " + asTableDbName();
         throw new UnsupportedOperationException(msg);
     }
 

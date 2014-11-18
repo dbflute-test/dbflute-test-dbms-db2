@@ -67,24 +67,16 @@ public abstract class BsAliasExcept extends AbstractEntity implements DomainEnti
     protected String _exceptName;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
+    public DBMeta asDBMeta() {
+        return DBMetaInstanceHandler.findDBMeta(asTableDbName());
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
         return "ALIAS_EXCEPT";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "aliasExcept";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
-        return DBMetaInstanceHandler.findDBMeta(getTableDbName());
     }
 
     // ===================================================================================
@@ -143,7 +135,7 @@ public abstract class BsAliasExcept extends AbstractEntity implements DomainEnti
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _exceptId);
         return hs;
     }

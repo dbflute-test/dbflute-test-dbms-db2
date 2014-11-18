@@ -70,8 +70,8 @@ public class WhiteRefTargetDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnRefTargetId = cci("REF_TARGET_ID", "REF_TARGET_ID", null, null, Long.class, "refTargetId", null, true, false, true, "DECIMAL", 16, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnTargetId = cci("TARGET_ID", "TARGET_ID", null, null, Long.class, "targetId", null, false, false, true, "DECIMAL", 16, 0, null, false, null, null, "whiteTarget", null, null);
+    protected final ColumnInfo _columnRefTargetId = cci("REF_TARGET_ID", "REF_TARGET_ID", null, null, Long.class, "refTargetId", null, true, false, true, "DECIMAL", 16, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnTargetId = cci("TARGET_ID", "TARGET_ID", null, null, Long.class, "targetId", null, false, false, true, "DECIMAL", 16, 0, null, false, null, null, "whiteTarget", null, null, false);
 
     /**
      * REF_TARGET_ID: {PK, NotNull, DECIMAL(16)}
@@ -117,7 +117,7 @@ public class WhiteRefTargetDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignWhiteTarget() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTargetId(), WhiteTargetDbm.getInstance().columnTargetId());
-        return cfi("FK_WHITE_REF_TARGET", "whiteTarget", this, WhiteTargetDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "whiteRefTargetList");
+        return cfi("FK_WHITE_REF_TARGET", "whiteTarget", this, WhiteTargetDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "whiteRefTargetList", false);
     }
 
     // -----------------------------------------------------
