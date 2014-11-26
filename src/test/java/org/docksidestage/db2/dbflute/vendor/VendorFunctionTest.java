@@ -49,7 +49,7 @@ public class VendorFunctionTest extends UnitContainerTestCase {
             public void query(MemberLoginCB subCB) {
                 subCB.specify().columnLoginDatetime();
             }
-        }, Member.ALIAS_latestLoginDatetime, op -> op.coalesce("1192-01-01"));
+        }, Member.ALIAS_latestLoginDatetime, op -> op.coalesce("1970-01-01"));
         assertTrue(cb.toDisplaySql().contains("coalesce("));
 
         // ## Act ##
@@ -61,9 +61,9 @@ public class VendorFunctionTest extends UnitContainerTestCase {
         boolean exists = false;
         for (Member member : memberList) {
             Date latestLoginDatetime = member.getLatestLoginDatetime();
-            String loginDateView = DfTypeUtil.toString(latestLoginDatetime, "yyyy-MM-dd");
+            String loginDateView = toString(latestLoginDatetime, "yyyy-MM-dd");
             log(member.getMemberName() + ": " + loginDateView);
-            if ("1192-01-01".equals(loginDateView)) {
+            if ("1970-01-01".equals(loginDateView)) {
                 exists = true;
             }
         }
