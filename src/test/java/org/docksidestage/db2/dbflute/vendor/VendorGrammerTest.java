@@ -148,7 +148,7 @@ public class VendorGrammerTest extends UnitContainerTestCase {
         try {
             memberWithdrawalBhv.queryInsert(new QueryInsertSetupper<MemberWithdrawal, MemberWithdrawalCB>() {
                 public ConditionBean setup(MemberWithdrawal entity, MemberWithdrawalCB intoCB) {
-                    // TODO jflute fixed value unsupported now on DB2
+                    // TODO jflute test: DB2, fixed value unsupported now on DB2
                     entity.setWithdrawalReasonCode(firstReason.getWithdrawalReasonCode());
                     MemberCB cb = new MemberCB();
 

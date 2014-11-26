@@ -37,7 +37,8 @@ public class AliasExceptDbm extends AbstractDBMeta {
     //                                       Column Property
     //                                       ---------------
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
-    {
+    { xsetupEpg(); }
+    protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((AliasExcept)et).getExceptId(), (et, vl) -> ((AliasExcept)et).setExceptId(ctl(vl)), "exceptId");
         setupEpg(_epgMap, et -> ((AliasExcept)et).getExceptName(), (et, vl) -> ((AliasExcept)et).setExceptName((String)vl), "exceptName");
     }
@@ -58,8 +59,8 @@ public class AliasExceptDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnExceptId = cci("EXCEPT_ID", "EXCEPT_ID", null, null, Long.class, "exceptId", null, true, false, true, "DECIMAL", 16, 0, null, false, null, null, null, "aliasRefExceptList", null);
-    protected final ColumnInfo _columnExceptName = cci("EXCEPT_NAME", "EXCEPT_NAME", null, null, String.class, "exceptName", null, false, false, false, "VARCHAR", 256, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnExceptId = cci("EXCEPT_ID", "EXCEPT_ID", null, null, Long.class, "exceptId", null, true, false, true, "DECIMAL", 16, 0, null, false, null, null, null, "aliasRefExceptList", null, false);
+    protected final ColumnInfo _columnExceptName = cci("EXCEPT_NAME", "EXCEPT_NAME", null, null, String.class, "exceptName", null, false, false, false, "VARCHAR", 256, 0, null, false, null, null, null, null, null, false);
 
     /**
      * EXCEPT_ID: {PK, NotNull, DECIMAL(16)}

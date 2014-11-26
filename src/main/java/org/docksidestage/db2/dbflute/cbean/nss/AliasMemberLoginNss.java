@@ -11,7 +11,7 @@ public class AliasMemberLoginNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected AliasMemberLoginCQ _query;
+    protected final AliasMemberLoginCQ _query;
     public AliasMemberLoginNss(AliasMemberLoginCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

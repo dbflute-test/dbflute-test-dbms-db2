@@ -174,7 +174,7 @@ public class BsSpVariousTypeParameterPmb implements ProcedurePmb, FetchBean {
         sb.append(dm).append(_vvInNumericDecimal);
         sb.append(dm).append(_vvInoutInteger);
         sb.append(dm).append(_vvOutBigint);
-        sb.append(dm).append(PmbCustodial.formatUtilDate(_vvvInDate, "yyyy-MM-dd", _timeZone));
+        sb.append(dm).append(PmbCustodial.formatUtilDate(_vvvInDate, _timeZone, "yyyy-MM-dd"));
         sb.append(dm).append(_vvvOutTimestamp);
         if (sb.length() > 0) { sb.delete(0, dm.length()); }
         sb.insert(0, "{").append("}");

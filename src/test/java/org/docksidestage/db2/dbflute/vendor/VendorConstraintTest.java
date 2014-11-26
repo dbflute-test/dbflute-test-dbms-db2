@@ -22,7 +22,7 @@ public class VendorConstraintTest extends UnitContainerTestCase {
     //                                                                          ==========
     private static final String MY_SQLSTATE = "23505";
     private static final int MY_ERRORCODE = -803;
-    private static final int MY_ERRORCODE_FOR_BATCH = -4228;
+    private static final int MY_ERRORCODE_FOR_BATCH = -4229;
 
     private static final String MY_SIZEOVER_SQLSTATE = "22001";
     private static final int MY_SIZEOVER_ERRORCODE = -302;
@@ -195,6 +195,7 @@ public class VendorConstraintTest extends UnitContainerTestCase {
             log("SQLState=" + extractSQLState(cause) + ", ErrorCode=" + cause.getErrorCode());
             log("* * * * * * * * * */");
             assertEquals(MY_SQLSTATE, extractSQLState(cause));
+            // TODO jflute test: DB2 error code
             assertEquals(MY_ERRORCODE_FOR_BATCH, cause.getErrorCode());
         }
     }

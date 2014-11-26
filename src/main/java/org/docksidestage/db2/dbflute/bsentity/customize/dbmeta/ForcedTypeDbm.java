@@ -37,7 +37,8 @@ public class ForcedTypeDbm extends AbstractDBMeta {
     //                                       Column Property
     //                                       ---------------
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
-    {
+    { xsetupEpg(); }
+    protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((ForcedType)et).getMaxMemberId(), (et, vl) -> ((ForcedType)et).setMaxMemberId(ctn(vl, java.math.BigInteger.class)), "maxMemberId");
     }
     public PropertyGateway findPropertyGateway(String prop)
@@ -57,7 +58,7 @@ public class ForcedTypeDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnMaxMemberId = cci("MAX_MEMBER_ID", "MAX_MEMBER_ID", null, null, java.math.BigInteger.class, "maxMemberId", null, false, false, false, "INTEGER", 10, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnMaxMemberId = cci("MAX_MEMBER_ID", "MAX_MEMBER_ID", null, null, java.math.BigInteger.class, "maxMemberId", null, false, false, false, "INTEGER", 10, 0, null, false, null, null, null, null, null, false);
 
     /**
      * MAX_MEMBER_ID: {INTEGER(10)}

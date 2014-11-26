@@ -37,7 +37,8 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
     //                                       Column Property
     //                                       ---------------
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
-    {
+    { xsetupEpg(); }
+    protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getMemberId(), (et, vl) -> ((SummaryMemberPurchase)et).setMemberId(cti(vl)), "memberId");
         setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getAllsumPurchasePrice(), (et, vl) -> ((SummaryMemberPurchase)et).setAllsumPurchasePrice(cti(vl)), "allsumPurchasePrice");
         setupEpg(_epgMap, et -> ((SummaryMemberPurchase)et).getLatestPurchaseDatetime(), (et, vl) -> ((SummaryMemberPurchase)et).setLatestPurchaseDatetime((java.util.Date)vl), "latestPurchaseDatetime");
@@ -59,9 +60,9 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnMemberId = cci("MEMBER_ID", "MEMBER_ID", null, null, Integer.class, "memberId", null, true, true, true, "UnknownType", null, null, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnAllsumPurchasePrice = cci("ALLSUM_PURCHASE_PRICE", "ALLSUM_PURCHASE_PRICE", null, null, Integer.class, "allsumPurchasePrice", null, false, false, false, "UnknownType", null, null, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnLatestPurchaseDatetime = cci("LATEST_PURCHASE_DATETIME", "LATEST_PURCHASE_DATETIME", null, null, java.util.Date.class, "latestPurchaseDatetime", null, false, false, false, "UnknownType", null, null, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnMemberId = cci("MEMBER_ID", "MEMBER_ID", null, null, Integer.class, "memberId", null, true, true, true, "UnknownType", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnAllsumPurchasePrice = cci("ALLSUM_PURCHASE_PRICE", "ALLSUM_PURCHASE_PRICE", null, null, Integer.class, "allsumPurchasePrice", null, false, false, false, "UnknownType", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnLatestPurchaseDatetime = cci("LATEST_PURCHASE_DATETIME", "LATEST_PURCHASE_DATETIME", null, null, java.util.Date.class, "latestPurchaseDatetime", null, false, false, false, "UnknownType", null, null, null, false, null, null, null, null, null, false);
 
     /**
      * MEMBER_ID: {PK, ID, NotNull, UnknownType}

@@ -11,7 +11,7 @@ public class AliasRefExceptNss {
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    protected AliasRefExceptCQ _query;
+    protected final AliasRefExceptCQ _query;
     public AliasRefExceptNss(AliasRefExceptCQ query) { _query = query; }
     public boolean hasConditionQuery() { return _query != null; }
 

@@ -37,7 +37,8 @@ public class WhiteTargetDbm extends AbstractDBMeta {
     //                                       Column Property
     //                                       ---------------
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
-    {
+    { xsetupEpg(); }
+    protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((WhiteTarget)et).getTargetId(), (et, vl) -> ((WhiteTarget)et).setTargetId(ctl(vl)), "targetId");
         setupEpg(_epgMap, et -> ((WhiteTarget)et).getTargetName(), (et, vl) -> ((WhiteTarget)et).setTargetName((String)vl), "targetName");
     }
@@ -58,8 +59,8 @@ public class WhiteTargetDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnTargetId = cci("TARGET_ID", "TARGET_ID", null, null, Long.class, "targetId", null, true, false, true, "DECIMAL", 16, 0, null, false, null, null, null, "whiteRefTargetList", null);
-    protected final ColumnInfo _columnTargetName = cci("TARGET_NAME", "TARGET_NAME", null, null, String.class, "targetName", null, false, false, false, "VARCHAR", 256, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnTargetId = cci("TARGET_ID", "TARGET_ID", null, null, Long.class, "targetId", null, true, false, true, "DECIMAL", 16, 0, null, false, null, null, null, "whiteRefTargetList", null, false);
+    protected final ColumnInfo _columnTargetName = cci("TARGET_NAME", "TARGET_NAME", null, null, String.class, "targetName", null, false, false, false, "VARCHAR", 256, 0, null, false, null, null, null, null, null, false);
 
     /**
      * TARGET_ID: {PK, NotNull, DECIMAL(16)}

@@ -66,24 +66,16 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     protected String _typeOfVarchar;
 
     // ===================================================================================
-    //                                                                          Table Name
-    //                                                                          ==========
+    //                                                                             DB Meta
+    //                                                                             =======
     /** {@inheritDoc} */
-    public String getTableDbName() {
-        return "SimpleVendorCheck";
-    }
-
-    /** {@inheritDoc} */
-    public String getTablePropertyName() {
-        return "simpleVendorCheck";
-    }
-
-    // ===================================================================================
-    //                                                                              DBMeta
-    //                                                                              ======
-    /** {@inheritDoc} */
-    public DBMeta getDBMeta() {
+    public DBMeta asDBMeta() {
         return org.docksidestage.db2.dbflute.bsentity.customize.dbmeta.SimpleVendorCheckDbm.getInstance();
+    }
+
+    /** {@inheritDoc} */
+    public String asTableDbName() {
+        return "SimpleVendorCheck";
     }
 
     // ===================================================================================
@@ -122,7 +114,7 @@ public abstract class BsSimpleVendorCheck extends AbstractEntity implements Cust
     @Override
     protected int doHashCode(int initial) {
         int hs = initial;
-        hs = xCH(hs, getTableDbName());
+        hs = xCH(hs, asTableDbName());
         hs = xCH(hs, _vendorCheckId);
         hs = xCH(hs, _typeOfVarchar);
         return hs;

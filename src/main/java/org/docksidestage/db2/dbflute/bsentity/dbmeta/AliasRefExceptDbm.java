@@ -37,7 +37,8 @@ public class AliasRefExceptDbm extends AbstractDBMeta {
     //                                       Column Property
     //                                       ---------------
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
-    {
+    { xsetupEpg(); }
+    protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((AliasRefExcept)et).getRefExceptId(), (et, vl) -> ((AliasRefExcept)et).setRefExceptId(ctl(vl)), "refExceptId");
         setupEpg(_epgMap, et -> ((AliasRefExcept)et).getExceptId(), (et, vl) -> ((AliasRefExcept)et).setExceptId(ctl(vl)), "exceptId");
     }
@@ -69,8 +70,8 @@ public class AliasRefExceptDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnRefExceptId = cci("REF_EXCEPT_ID", "REF_EXCEPT_ID", null, null, Long.class, "refExceptId", null, true, false, true, "DECIMAL", 16, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnExceptId = cci("EXCEPT_ID", "EXCEPT_ID", null, null, Long.class, "exceptId", null, false, false, true, "DECIMAL", 16, 0, null, false, null, null, "aliasExcept", null, null);
+    protected final ColumnInfo _columnRefExceptId = cci("REF_EXCEPT_ID", "REF_EXCEPT_ID", null, null, Long.class, "refExceptId", null, true, false, true, "DECIMAL", 16, 0, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnExceptId = cci("EXCEPT_ID", "EXCEPT_ID", null, null, Long.class, "exceptId", null, false, false, true, "DECIMAL", 16, 0, null, false, null, null, "aliasExcept", null, null, false);
 
     /**
      * REF_EXCEPT_ID: {PK, NotNull, DECIMAL(16)}
@@ -116,7 +117,7 @@ public class AliasRefExceptDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignAliasExcept() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnExceptId(), AliasExceptDbm.getInstance().columnExceptId());
-        return cfi("FK_WHITE_REF_EXCEPT", "aliasExcept", this, AliasExceptDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "aliasRefExceptList");
+        return cfi("FK_WHITE_REF_EXCEPT", "aliasExcept", this, AliasExceptDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "aliasRefExceptList", false);
     }
 
     // -----------------------------------------------------

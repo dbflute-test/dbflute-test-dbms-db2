@@ -1,6 +1,6 @@
 
--- For the test about a sequence not related to a table.
--- This sequence must be dropped when executing replace-schema task.
+-- for the test about a sequence not related to a table
+-- this sequence must be dropped when executing replace-schema task
 CREATE SEQUENCE SEQ_NOT_RELATED_TO_TABLE START WITH 1 INCREMENT BY 1;
 
 -- for the test of sequence cache on this DBMS
