@@ -28,6 +28,9 @@ public class SpReturnResultSetMoreNotParamResult1Dbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -41,8 +44,8 @@ public class SpReturnResultSetMoreNotParamResult1Dbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SpReturnResultSetMoreNotParamResult1)et).getMemberId(), (et, vl) -> ((SpReturnResultSetMoreNotParamResult1)et).setMemberId(cti(vl)), "memberId");
         setupEpg(_epgMap, et -> ((SpReturnResultSetMoreNotParamResult1)et).getMemberName(), (et, vl) -> ((SpReturnResultSetMoreNotParamResult1)et).setMemberName((String)vl), "memberName");
-        setupEpg(_epgMap, et -> ((SpReturnResultSetMoreNotParamResult1)et).getBirthdate(), (et, vl) -> ((SpReturnResultSetMoreNotParamResult1)et).setBirthdate((java.util.Date)vl), "birthdate");
-        setupEpg(_epgMap, et -> ((SpReturnResultSetMoreNotParamResult1)et).getFormalizedDatetime(), (et, vl) -> ((SpReturnResultSetMoreNotParamResult1)et).setFormalizedDatetime((java.sql.Timestamp)vl), "formalizedDatetime");
+        setupEpg(_epgMap, et -> ((SpReturnResultSetMoreNotParamResult1)et).getBirthdate(), (et, vl) -> ((SpReturnResultSetMoreNotParamResult1)et).setBirthdate(ctdt(vl)), "birthdate");
+        setupEpg(_epgMap, et -> ((SpReturnResultSetMoreNotParamResult1)et).getFormalizedDatetime(), (et, vl) -> ((SpReturnResultSetMoreNotParamResult1)et).setFormalizedDatetime(cttp(vl)), "formalizedDatetime");
         setupEpg(_epgMap, et -> ((SpReturnResultSetMoreNotParamResult1)et).getMemberStatusCode(), (et, vl) -> {
             ColumnInfo col = columnMemberStatusCode();
             CDef.MemberStatus cls = (CDef.MemberStatus)gcls(col, vl);

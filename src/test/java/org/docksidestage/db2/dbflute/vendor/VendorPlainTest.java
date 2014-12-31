@@ -81,7 +81,7 @@ public class VendorPlainTest extends UnitContainerTestCase {
         DateFormat df = new SimpleDateFormat("Gyyyy/MM/dd HH:mm:dd.SSS");
         log(df.format(actual.getFormalizedDatetime()));
         assertFalse(DfTypeUtil.isDateBC(actual.getFormalizedDatetime())); // cannot handle BC date
-        assertTrue(df.format(actual.getFormalizedDatetime()).contains("2009/12/25"));
+        assertTrue(df.format(actual.getFormalizedDatetime()).contains("2010/12/25"));
     }
 
     // ===================================================================================

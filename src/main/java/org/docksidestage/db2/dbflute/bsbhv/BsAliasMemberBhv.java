@@ -633,7 +633,8 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
     }
 
     /**
-     * Update the entity modified-only. (ZeroUpdateException, ExclusiveControl)
+     * Update the entity modified-only. (ZeroUpdateException, ExclusiveControl) <br>
+     * By PK as default, and also you can update by unique keys using entity's uniqueOf().
      * <pre>
      * AliasMember aliasMember = <span style="color: #70226C">new</span> AliasMember();
      * aliasMember.setPK...(value); <span style="color: #3F7E5E">// required</span>
@@ -655,7 +656,8 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
     }
 
     /**
-     * Update the entity non-strictly modified-only. (ZeroUpdateException, NonExclusiveControl)
+     * Update the entity non-strictly modified-only. (ZeroUpdateException, NonExclusiveControl) <br>
+     * By PK as default, and also you can update by unique keys using entity's uniqueOf().
      * <pre>
      * AliasMember aliasMember = <span style="color: #70226C">new</span> AliasMember();
      * aliasMember.setPK...(value); <span style="color: #3F7E5E">// required</span>
@@ -680,7 +682,7 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
     /**
      * Insert or update the entity modified-only. (DefaultConstraintsEnabled, ExclusiveControl) <br>
      * if (the entity has no PK) { insert() } else { update(), but no data, insert() } <br>
-     * <p><span style="color: #CC4747; font-size: 120%">Attention, you cannot update by unique keys instead of PK.</span></p>
+     * <p><span style="color: #994747; font-size: 120%">Also you can update by unique keys using entity's uniqueOf().</span></p>
      * @param aliasMember The entity of insert or update. (NotNull, ...depends on insert or update)
      * @throws EntityAlreadyUpdatedException When the entity has already been updated.
      * @throws EntityDuplicatedException When the entity has been duplicated.
@@ -693,7 +695,7 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
     /**
      * Insert or update the entity non-strictly modified-only. (DefaultConstraintsEnabled, NonExclusiveControl) <br>
      * if (the entity has no PK) { insert() } else { update(), but no data, insert() }
-     * <p><span style="color: #CC4747; font-size: 120%">Attention, you cannot update by unique keys instead of PK.</span></p>
+     * <p><span style="color: #994747; font-size: 120%">Also you can update by unique keys using entity's uniqueOf().</span></p>
      * @param aliasMember The entity of insert or update. (NotNull, ...depends on insert or update)
      * @throws EntityAlreadyDeletedException When the entity has already been deleted. (not found)
      * @throws EntityDuplicatedException When the entity has been duplicated.
@@ -704,7 +706,8 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
     }
 
     /**
-     * Delete the entity. (ZeroUpdateException, ExclusiveControl)
+     * Delete the entity. (ZeroUpdateException, ExclusiveControl) <br>
+     * By PK as default, and also you can delete by unique keys using entity's uniqueOf().
      * <pre>
      * AliasMember aliasMember = <span style="color: #70226C">new</span> AliasMember();
      * aliasMember.setPK...(value); <span style="color: #3F7E5E">// required</span>
@@ -725,7 +728,8 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
     }
 
     /**
-     * Delete the entity non-strictly. {ZeroUpdateException, NonExclusiveControl}
+     * Delete the entity non-strictly. {ZeroUpdateException, NonExclusiveControl} <br>
+     * By PK as default, and also you can delete by unique keys using entity's uniqueOf().
      * <pre>
      * AliasMember aliasMember = <span style="color: #70226C">new</span> AliasMember();
      * aliasMember.setPK...(value); <span style="color: #3F7E5E">// required</span>
