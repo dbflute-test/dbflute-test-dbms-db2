@@ -28,6 +28,9 @@ public class AliasMemberDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -51,11 +54,11 @@ public class AliasMemberDbm extends AbstractDBMeta {
                 ((AliasMember)et).mynativeMappingMemberStatusCode((String)vl);
             }
         }, "memberStatusCode");
-        setupEpg(_epgMap, et -> ((AliasMember)et).getFormalizedDatetime(), (et, vl) -> ((AliasMember)et).setFormalizedDatetime((java.sql.Timestamp)vl), "formalizedDatetime");
-        setupEpg(_epgMap, et -> ((AliasMember)et).getBirthdate(), (et, vl) -> ((AliasMember)et).setBirthdate((java.util.Date)vl), "birthdate");
-        setupEpg(_epgMap, et -> ((AliasMember)et).getRegisterDatetime(), (et, vl) -> ((AliasMember)et).setRegisterDatetime((java.sql.Timestamp)vl), "registerDatetime");
+        setupEpg(_epgMap, et -> ((AliasMember)et).getFormalizedDatetime(), (et, vl) -> ((AliasMember)et).setFormalizedDatetime(cttp(vl)), "formalizedDatetime");
+        setupEpg(_epgMap, et -> ((AliasMember)et).getBirthdate(), (et, vl) -> ((AliasMember)et).setBirthdate(ctdt(vl)), "birthdate");
+        setupEpg(_epgMap, et -> ((AliasMember)et).getRegisterDatetime(), (et, vl) -> ((AliasMember)et).setRegisterDatetime(cttp(vl)), "registerDatetime");
         setupEpg(_epgMap, et -> ((AliasMember)et).getRegisterUser(), (et, vl) -> ((AliasMember)et).setRegisterUser((String)vl), "registerUser");
-        setupEpg(_epgMap, et -> ((AliasMember)et).getUpdateDatetime(), (et, vl) -> ((AliasMember)et).setUpdateDatetime((java.sql.Timestamp)vl), "updateDatetime");
+        setupEpg(_epgMap, et -> ((AliasMember)et).getUpdateDatetime(), (et, vl) -> ((AliasMember)et).setUpdateDatetime(cttp(vl)), "updateDatetime");
         setupEpg(_epgMap, et -> ((AliasMember)et).getUpdateUser(), (et, vl) -> ((AliasMember)et).setUpdateUser((String)vl), "updateUser");
         setupEpg(_epgMap, et -> ((AliasMember)et).getVersionNo(), (et, vl) -> ((AliasMember)et).setVersionNo(ctl(vl)), "versionNo");
     }
@@ -77,10 +80,12 @@ public class AliasMemberDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "ALIAS_MEMBER";
+    protected final String _tableDispName = "ALIAS_MEMBER";
     protected final String _tablePropertyName = "aliasMember";
     protected final TableSqlName _tableSqlName = new TableSqlName("ALIAS_MEMBER", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 
@@ -182,6 +187,11 @@ public class AliasMemberDbm extends AbstractDBMeta {
     protected UniqueInfo cpui() { return hpcpui(columnMemberId()); }
     public boolean hasPrimaryKey() { return true; }
     public boolean hasCompoundPrimaryKey() { return false; }
+
+    // -----------------------------------------------------
+    //                                        Unique Element
+    //                                        --------------
+    public UniqueInfo uniqueOf() { return hpcui(columnMemberAccount()); }
 
     // ===================================================================================
     //                                                                       Relation Info

@@ -28,6 +28,9 @@ public class VendorCheckDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -55,9 +58,9 @@ public class VendorCheckDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfFloat(), (et, vl) -> ((VendorCheck)et).setTypeOfFloat(ctb(vl)), "typeOfFloat");
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfDouble(), (et, vl) -> ((VendorCheck)et).setTypeOfDouble(ctb(vl)), "typeOfDouble");
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfReal(), (et, vl) -> ((VendorCheck)et).setTypeOfReal(ctb(vl)), "typeOfReal");
-        setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfDate(), (et, vl) -> ((VendorCheck)et).setTypeOfDate((java.util.Date)vl), "typeOfDate");
-        setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfTime(), (et, vl) -> ((VendorCheck)et).setTypeOfTime((java.sql.Time)vl), "typeOfTime");
-        setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfTimestamp(), (et, vl) -> ((VendorCheck)et).setTypeOfTimestamp((java.sql.Timestamp)vl), "typeOfTimestamp");
+        setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfDate(), (et, vl) -> ((VendorCheck)et).setTypeOfDate(ctdt(vl)), "typeOfDate");
+        setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfTime(), (et, vl) -> ((VendorCheck)et).setTypeOfTime(cttm(vl)), "typeOfTime");
+        setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfTimestamp(), (et, vl) -> ((VendorCheck)et).setTypeOfTimestamp(cttp(vl)), "typeOfTimestamp");
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfBlob(), (et, vl) -> ((VendorCheck)et).setTypeOfBlob((byte[])vl), "typeOfBlob");
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfGraphic(), (et, vl) -> ((VendorCheck)et).setTypeOfGraphic((String)vl), "typeOfGraphic");
         setupEpg(_epgMap, et -> ((VendorCheck)et).getTypeOfVargraphic(), (et, vl) -> ((VendorCheck)et).setTypeOfVargraphic((String)vl), "typeOfVargraphic");
@@ -70,10 +73,12 @@ public class VendorCheckDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "VENDOR_CHECK";
+    protected final String _tableDispName = "VENDOR_CHECK";
     protected final String _tablePropertyName = "vendorCheck";
     protected final TableSqlName _tableSqlName = new TableSqlName("VENDOR_CHECK", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 

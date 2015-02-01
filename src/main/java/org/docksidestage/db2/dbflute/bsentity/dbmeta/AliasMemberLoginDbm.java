@@ -28,6 +28,9 @@ public class AliasMemberLoginDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                       Current DBDef
     //                                                                       =============
+    public String getProjectName() { return DBCurrent.getInstance().projectName(); }
+    public String getProjectPrefix() { return DBCurrent.getInstance().projectPrefix(); }
+    public String getGenerationGapBasePrefix() { return DBCurrent.getInstance().generationGapBasePrefix(); }
     public DBDef getCurrentDBDef() { return DBCurrent.getInstance().currentDBDef(); }
 
     // ===================================================================================
@@ -41,7 +44,7 @@ public class AliasMemberLoginDbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((AliasMemberLogin)et).getMemberLoginId(), (et, vl) -> ((AliasMemberLogin)et).setMemberLoginId(ctl(vl)), "memberLoginId");
         setupEpg(_epgMap, et -> ((AliasMemberLogin)et).getMemberId(), (et, vl) -> ((AliasMemberLogin)et).setMemberId(cti(vl)), "memberId");
-        setupEpg(_epgMap, et -> ((AliasMemberLogin)et).getLoginDatetime(), (et, vl) -> ((AliasMemberLogin)et).setLoginDatetime((java.sql.Timestamp)vl), "loginDatetime");
+        setupEpg(_epgMap, et -> ((AliasMemberLogin)et).getLoginDatetime(), (et, vl) -> ((AliasMemberLogin)et).setLoginDatetime(cttp(vl)), "loginDatetime");
         setupEpg(_epgMap, et -> ((AliasMemberLogin)et).getMobileLoginFlg(), (et, vl) -> {
             ColumnInfo col = columnMobileLoginFlg();
             CDef.Flg cls = (CDef.Flg)gcls(col, vl);
@@ -80,10 +83,12 @@ public class AliasMemberLoginDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "ALIAS_MEMBER_LOGIN";
+    protected final String _tableDispName = "ALIAS_MEMBER_LOGIN";
     protected final String _tablePropertyName = "aliasMemberLogin";
     protected final TableSqlName _tableSqlName = new TableSqlName("ALIAS_MEMBER_LOGIN", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 
@@ -143,6 +148,16 @@ public class AliasMemberLoginDbm extends AbstractDBMeta {
     protected UniqueInfo cpui() { return hpcpui(columnMemberLoginId()); }
     public boolean hasPrimaryKey() { return true; }
     public boolean hasCompoundPrimaryKey() { return false; }
+
+    // -----------------------------------------------------
+    //                                        Unique Element
+    //                                        --------------
+    public UniqueInfo uniqueOf() {
+        List<ColumnInfo> ls = newArrayListSized(4);
+        ls.add(columnMemberId());
+        ls.add(columnLoginDatetime());
+        return hpcui(ls);
+    }
 
     // ===================================================================================
     //                                                                       Relation Info

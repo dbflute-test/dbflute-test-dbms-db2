@@ -195,7 +195,7 @@ public class VendorConstraintTest extends UnitContainerTestCase {
             log("SQLState=" + extractSQLState(cause) + ", ErrorCode=" + cause.getErrorCode());
             log("* * * * * * * * * */");
             assertEquals(MY_SQLSTATE, extractSQLState(cause));
-            // TODO jflute test: DB2 error code
+            // TODO jflute test: DB2, error code
             assertEquals(MY_ERRORCODE_FOR_BATCH, cause.getErrorCode());
         }
     }

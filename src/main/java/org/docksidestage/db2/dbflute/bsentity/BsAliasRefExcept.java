@@ -80,8 +80,8 @@ public abstract class BsAliasRefExcept extends AbstractEntity implements DomainE
     }
 
     // ===================================================================================
-    //                                                                         Primary Key
-    //                                                                         ===========
+    //                                                                        Key Handling
+    //                                                                        ============
     /** {@inheritDoc} */
     public boolean hasPrimaryKeyValue() {
         if (_refExceptId == null) { return false; }
