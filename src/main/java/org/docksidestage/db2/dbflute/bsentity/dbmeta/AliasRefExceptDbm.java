@@ -63,10 +63,12 @@ public class AliasRefExceptDbm extends AbstractDBMeta {
     //                                                                          Table Info
     //                                                                          ==========
     protected final String _tableDbName = "ALIAS_REF_EXCEPT";
+    protected final String _tableDispName = "ALIAS_REF_EXCEPT";
     protected final String _tablePropertyName = "aliasRefExcept";
     protected final TableSqlName _tableSqlName = new TableSqlName("ALIAS_REF_EXCEPT", _tableDbName);
     { _tableSqlName.xacceptFilter(DBFluteConfig.getInstance().getTableSqlNameFilter()); }
     public String getTableDbName() { return _tableDbName; }
+    public String getTableDispName() { return _tableDispName; }
     public String getTablePropertyName() { return _tablePropertyName; }
     public TableSqlName getTableSqlName() { return _tableSqlName; }
 
