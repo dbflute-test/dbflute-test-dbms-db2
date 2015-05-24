@@ -47,7 +47,7 @@ public class AliasMemberLoginDbm extends AbstractDBMeta {
         setupEpg(_epgMap, et -> ((AliasMemberLogin)et).getLoginDatetime(), (et, vl) -> ((AliasMemberLogin)et).setLoginDatetime(cttp(vl)), "loginDatetime");
         setupEpg(_epgMap, et -> ((AliasMemberLogin)et).getMobileLoginFlg(), (et, vl) -> {
             ColumnInfo col = columnMobileLoginFlg();
-            CDef.Flg cls = (CDef.Flg)gcls(col, vl);
+            CDef.Flg cls = (CDef.Flg)gcls(et, col, vl);
             if (cls != null) {
                 ((AliasMemberLogin)et).setMobileLoginFlgAsFlg(cls);
             } else {
@@ -56,7 +56,7 @@ public class AliasMemberLoginDbm extends AbstractDBMeta {
         }, "mobileLoginFlg");
         setupEpg(_epgMap, et -> ((AliasMemberLogin)et).getLoginMemberStatusCode(), (et, vl) -> {
             ColumnInfo col = columnLoginMemberStatusCode();
-            CDef.MemberStatus cls = (CDef.MemberStatus)gcls(col, vl);
+            CDef.MemberStatus cls = (CDef.MemberStatus)gcls(et, col, vl);
             if (cls != null) {
                 ((AliasMemberLogin)et).setLoginMemberStatusCodeAsMemberStatus(cls);
             } else {

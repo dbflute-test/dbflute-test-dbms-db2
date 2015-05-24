@@ -44,7 +44,7 @@ public class SpReturnResultSetWithNotParamResult2Dbm extends AbstractDBMeta {
     protected void xsetupEpg() {
         setupEpg(_epgMap, et -> ((SpReturnResultSetWithNotParamResult2)et).getMemberStatusCode(), (et, vl) -> {
             ColumnInfo col = columnMemberStatusCode();
-            CDef.MemberStatus cls = (CDef.MemberStatus)gcls(col, vl);
+            CDef.MemberStatus cls = (CDef.MemberStatus)gcls(et, col, vl);
             if (cls != null) {
                 ((SpReturnResultSetWithNotParamResult2)et).setMemberStatusCodeAsMemberStatus(cls);
             } else {
