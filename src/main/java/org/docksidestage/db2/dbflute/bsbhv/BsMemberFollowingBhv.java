@@ -128,8 +128,8 @@ public abstract class BsMemberFollowingBhv extends AbstractBehaviorWritable<Memb
      * @throws EntityDuplicatedException When the entity has been duplicated.
      * @throws SelectEntityConditionNotFoundException When the condition for selecting an entity is not found.
      */
-    public MemberFollowing selectEntity(CBCall<MemberFollowingCB> cbLambda) {
-        return facadeSelectEntity(createCB(cbLambda));
+    public OptionalEntity<MemberFollowing> selectEntity(CBCall<MemberFollowingCB> cbLambda) {
+        return doSelectOptionalEntity(createCB(cbLambda), typeOfSelectedEntity());
     }
 
     /**

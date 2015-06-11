@@ -128,8 +128,8 @@ public abstract class BsAliasExceptBhv extends AbstractBehaviorWritable<AliasExc
      * @throws EntityDuplicatedException When the entity has been duplicated.
      * @throws SelectEntityConditionNotFoundException When the condition for selecting an entity is not found.
      */
-    public AliasExcept selectEntity(CBCall<AliasExceptCB> cbLambda) {
-        return facadeSelectEntity(createCB(cbLambda));
+    public OptionalEntity<AliasExcept> selectEntity(CBCall<AliasExceptCB> cbLambda) {
+        return doSelectOptionalEntity(createCB(cbLambda), typeOfSelectedEntity());
     }
 
     /**

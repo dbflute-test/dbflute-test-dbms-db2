@@ -127,8 +127,8 @@ public abstract class BsSummaryProductBhv extends AbstractBehaviorReadable<Summa
      * @throws EntityDuplicatedException When the entity has been duplicated.
      * @throws SelectEntityConditionNotFoundException When the condition for selecting an entity is not found.
      */
-    public SummaryProduct selectEntity(CBCall<SummaryProductCB> cbLambda) {
-        return facadeSelectEntity(createCB(cbLambda));
+    public OptionalEntity<SummaryProduct> selectEntity(CBCall<SummaryProductCB> cbLambda) {
+        return doSelectOptionalEntity(createCB(cbLambda), typeOfSelectedEntity());
     }
 
     /**

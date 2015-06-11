@@ -128,8 +128,8 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
      * @throws EntityDuplicatedException When the entity has been duplicated.
      * @throws SelectEntityConditionNotFoundException When the condition for selecting an entity is not found.
      */
-    public AliasMember selectEntity(CBCall<AliasMemberCB> cbLambda) {
-        return facadeSelectEntity(createCB(cbLambda));
+    public OptionalEntity<AliasMember> selectEntity(CBCall<AliasMemberCB> cbLambda) {
+        return doSelectOptionalEntity(createCB(cbLambda), typeOfSelectedEntity());
     }
 
     /**

@@ -128,8 +128,8 @@ public abstract class BsAliasMemberLoginBhv extends AbstractBehaviorWritable<Ali
      * @throws EntityDuplicatedException When the entity has been duplicated.
      * @throws SelectEntityConditionNotFoundException When the condition for selecting an entity is not found.
      */
-    public AliasMemberLogin selectEntity(CBCall<AliasMemberLoginCB> cbLambda) {
-        return facadeSelectEntity(createCB(cbLambda));
+    public OptionalEntity<AliasMemberLogin> selectEntity(CBCall<AliasMemberLoginCB> cbLambda) {
+        return doSelectOptionalEntity(createCB(cbLambda), typeOfSelectedEntity());
     }
 
     /**
