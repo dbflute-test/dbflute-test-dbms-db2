@@ -128,8 +128,8 @@ public abstract class BsWhiteRefTargetBhv extends AbstractBehaviorWritable<White
      * @throws EntityDuplicatedException When the entity has been duplicated.
      * @throws SelectEntityConditionNotFoundException When the condition for selecting an entity is not found.
      */
-    public WhiteRefTarget selectEntity(CBCall<WhiteRefTargetCB> cbLambda) {
-        return facadeSelectEntity(createCB(cbLambda));
+    public OptionalEntity<WhiteRefTarget> selectEntity(CBCall<WhiteRefTargetCB> cbLambda) {
+        return doSelectOptionalEntity(createCB(cbLambda), typeOfSelectedEntity());
     }
 
     /**

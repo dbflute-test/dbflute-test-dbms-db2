@@ -280,7 +280,7 @@ public class BsAliasMemberLoginCB extends AbstractConditionBean {
      */
     public void setupSelect_MemberStatus() {
         assertSetupSelectPurpose("memberStatus");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnLoginMemberStatusCode();
         }
         doSetupSelect(() -> query().queryMemberStatus());
@@ -306,7 +306,7 @@ public class BsAliasMemberLoginCB extends AbstractConditionBean {
      */
     public AliasMemberNss setupSelect_AliasMember() {
         assertSetupSelectPurpose("aliasMember");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnMemberId();
         }
         doSetupSelect(() -> query().queryAliasMember());
@@ -351,8 +351,8 @@ public class BsAliasMemberLoginCB extends AbstractConditionBean {
         return specify();
     }
 
-    public boolean hasSpecifiedColumn() {
-        return _specification != null && _specification.isAlreadySpecifiedRequiredColumn();
+    public boolean hasSpecifiedLocalColumn() {
+        return _specification != null && _specification.hasSpecifiedColumn();
     }
 
     public static class HpSpecification extends HpAbstractSpecification<AliasMemberLoginCQ> {

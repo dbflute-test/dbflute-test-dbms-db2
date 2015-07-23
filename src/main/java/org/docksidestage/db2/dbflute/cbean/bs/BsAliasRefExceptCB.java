@@ -266,7 +266,7 @@ public class BsAliasRefExceptCB extends AbstractConditionBean {
      */
     public void setupSelect_AliasExcept() {
         assertSetupSelectPurpose("aliasExcept");
-        if (hasSpecifiedColumn()) { // if reverse call
+        if (hasSpecifiedLocalColumn()) {
             specify().columnExceptId();
         }
         doSetupSelect(() -> query().queryAliasExcept());
@@ -308,8 +308,8 @@ public class BsAliasRefExceptCB extends AbstractConditionBean {
         return specify();
     }
 
-    public boolean hasSpecifiedColumn() {
-        return _specification != null && _specification.isAlreadySpecifiedRequiredColumn();
+    public boolean hasSpecifiedLocalColumn() {
+        return _specification != null && _specification.hasSpecifiedColumn();
     }
 
     public static class HpSpecification extends HpAbstractSpecification<AliasRefExceptCQ> {
