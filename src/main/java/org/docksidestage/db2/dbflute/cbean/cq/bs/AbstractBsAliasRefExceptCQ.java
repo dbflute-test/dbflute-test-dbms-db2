@@ -46,7 +46,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_EXCEPT_ID: {PK, NotNull, DECIMAL(16)}
-     * @param refExceptId The value of refExceptId as equal. (NullAllowed: if null, no condition)
+     * @param refExceptId The value of refExceptId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefExceptId_Equal(Long refExceptId) {
         doSetRefExceptId_Equal(refExceptId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_EXCEPT_ID: {PK, NotNull, DECIMAL(16)}
-     * @param refExceptId The value of refExceptId as notEqual. (NullAllowed: if null, no condition)
+     * @param refExceptId The value of refExceptId as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefExceptId_NotEqual(Long refExceptId) {
         doSetRefExceptId_NotEqual(refExceptId);
@@ -72,7 +72,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_EXCEPT_ID: {PK, NotNull, DECIMAL(16)}
-     * @param refExceptId The value of refExceptId as greaterThan. (NullAllowed: if null, no condition)
+     * @param refExceptId The value of refExceptId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefExceptId_GreaterThan(Long refExceptId) {
         regRefExceptId(CK_GT, refExceptId);
@@ -81,7 +81,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_EXCEPT_ID: {PK, NotNull, DECIMAL(16)}
-     * @param refExceptId The value of refExceptId as lessThan. (NullAllowed: if null, no condition)
+     * @param refExceptId The value of refExceptId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefExceptId_LessThan(Long refExceptId) {
         regRefExceptId(CK_LT, refExceptId);
@@ -90,7 +90,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_EXCEPT_ID: {PK, NotNull, DECIMAL(16)}
-     * @param refExceptId The value of refExceptId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param refExceptId The value of refExceptId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefExceptId_GreaterEqual(Long refExceptId) {
         regRefExceptId(CK_GE, refExceptId);
@@ -99,7 +99,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * REF_EXCEPT_ID: {PK, NotNull, DECIMAL(16)}
-     * @param refExceptId The value of refExceptId as lessEqual. (NullAllowed: if null, no condition)
+     * @param refExceptId The value of refExceptId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setRefExceptId_LessEqual(Long refExceptId) {
         regRefExceptId(CK_LE, refExceptId);
@@ -175,7 +175,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {NotNull, DECIMAL(16), FK to ALIAS_EXCEPT}
-     * @param exceptId The value of exceptId as equal. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_Equal(Long exceptId) {
         doSetExceptId_Equal(exceptId);
@@ -188,7 +188,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {NotNull, DECIMAL(16), FK to ALIAS_EXCEPT}
-     * @param exceptId The value of exceptId as notEqual. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_NotEqual(Long exceptId) {
         doSetExceptId_NotEqual(exceptId);
@@ -201,7 +201,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {NotNull, DECIMAL(16), FK to ALIAS_EXCEPT}
-     * @param exceptId The value of exceptId as greaterThan. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_GreaterThan(Long exceptId) {
         regExceptId(CK_GT, exceptId);
@@ -210,7 +210,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {NotNull, DECIMAL(16), FK to ALIAS_EXCEPT}
-     * @param exceptId The value of exceptId as lessThan. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_LessThan(Long exceptId) {
         regExceptId(CK_LT, exceptId);
@@ -219,7 +219,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {NotNull, DECIMAL(16), FK to ALIAS_EXCEPT}
-     * @param exceptId The value of exceptId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_GreaterEqual(Long exceptId) {
         regExceptId(CK_GE, exceptId);
@@ -228,7 +228,7 @@ public abstract class AbstractBsAliasRefExceptCQ extends AbstractConditionQuery 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * EXCEPT_ID: {NotNull, DECIMAL(16), FK to ALIAS_EXCEPT}
-     * @param exceptId The value of exceptId as lessEqual. (NullAllowed: if null, no condition)
+     * @param exceptId The value of exceptId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setExceptId_LessEqual(Long exceptId) {
         regExceptId(CK_LE, exceptId);
