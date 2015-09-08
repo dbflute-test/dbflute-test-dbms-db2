@@ -46,7 +46,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_CHECK_ID: {PK, NotNull, DECIMAL(16)}
-     * @param vendorCheckId The value of vendorCheckId as equal. (NullAllowed: if null, no condition)
+     * @param vendorCheckId The value of vendorCheckId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorCheckId_Equal(Long vendorCheckId) {
         doSetVendorCheckId_Equal(vendorCheckId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_CHECK_ID: {PK, NotNull, DECIMAL(16)}
-     * @param vendorCheckId The value of vendorCheckId as notEqual. (NullAllowed: if null, no condition)
+     * @param vendorCheckId The value of vendorCheckId as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorCheckId_NotEqual(Long vendorCheckId) {
         doSetVendorCheckId_NotEqual(vendorCheckId);
@@ -72,7 +72,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_CHECK_ID: {PK, NotNull, DECIMAL(16)}
-     * @param vendorCheckId The value of vendorCheckId as greaterThan. (NullAllowed: if null, no condition)
+     * @param vendorCheckId The value of vendorCheckId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorCheckId_GreaterThan(Long vendorCheckId) {
         regVendorCheckId(CK_GT, vendorCheckId);
@@ -81,7 +81,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_CHECK_ID: {PK, NotNull, DECIMAL(16)}
-     * @param vendorCheckId The value of vendorCheckId as lessThan. (NullAllowed: if null, no condition)
+     * @param vendorCheckId The value of vendorCheckId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorCheckId_LessThan(Long vendorCheckId) {
         regVendorCheckId(CK_LT, vendorCheckId);
@@ -90,7 +90,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_CHECK_ID: {PK, NotNull, DECIMAL(16)}
-     * @param vendorCheckId The value of vendorCheckId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param vendorCheckId The value of vendorCheckId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorCheckId_GreaterEqual(Long vendorCheckId) {
         regVendorCheckId(CK_GE, vendorCheckId);
@@ -99,7 +99,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_CHECK_ID: {PK, NotNull, DECIMAL(16)}
-     * @param vendorCheckId The value of vendorCheckId as lessEqual. (NullAllowed: if null, no condition)
+     * @param vendorCheckId The value of vendorCheckId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setVendorCheckId_LessEqual(Long vendorCheckId) {
         regVendorCheckId(CK_LE, vendorCheckId);
@@ -699,7 +699,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_DECIMAL: {DECIMAL(5, 3)}
-     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as equal. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalDecimal_Equal(java.math.BigDecimal typeOfDecimalDecimal) {
         doSetTypeOfDecimalDecimal_Equal(typeOfDecimalDecimal);
@@ -712,7 +712,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_DECIMAL: {DECIMAL(5, 3)}
-     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as notEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalDecimal_NotEqual(java.math.BigDecimal typeOfDecimalDecimal) {
         doSetTypeOfDecimalDecimal_NotEqual(typeOfDecimalDecimal);
@@ -725,7 +725,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_DECIMAL: {DECIMAL(5, 3)}
-     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalDecimal_GreaterThan(java.math.BigDecimal typeOfDecimalDecimal) {
         regTypeOfDecimalDecimal(CK_GT, typeOfDecimalDecimal);
@@ -734,7 +734,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_DECIMAL: {DECIMAL(5, 3)}
-     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalDecimal_LessThan(java.math.BigDecimal typeOfDecimalDecimal) {
         regTypeOfDecimalDecimal(CK_LT, typeOfDecimalDecimal);
@@ -743,7 +743,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_DECIMAL: {DECIMAL(5, 3)}
-     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalDecimal_GreaterEqual(java.math.BigDecimal typeOfDecimalDecimal) {
         regTypeOfDecimalDecimal(CK_GE, typeOfDecimalDecimal);
@@ -752,7 +752,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_DECIMAL: {DECIMAL(5, 3)}
-     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalDecimal The value of typeOfDecimalDecimal as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalDecimal_LessEqual(java.math.BigDecimal typeOfDecimalDecimal) {
         regTypeOfDecimalDecimal(CK_LE, typeOfDecimalDecimal);
@@ -828,7 +828,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_INTEGER: {DECIMAL(5)}
-     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as equal. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalInteger_Equal(Integer typeOfDecimalInteger) {
         doSetTypeOfDecimalInteger_Equal(typeOfDecimalInteger);
@@ -841,7 +841,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_INTEGER: {DECIMAL(5)}
-     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as notEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalInteger_NotEqual(Integer typeOfDecimalInteger) {
         doSetTypeOfDecimalInteger_NotEqual(typeOfDecimalInteger);
@@ -854,7 +854,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_INTEGER: {DECIMAL(5)}
-     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalInteger_GreaterThan(Integer typeOfDecimalInteger) {
         regTypeOfDecimalInteger(CK_GT, typeOfDecimalInteger);
@@ -863,7 +863,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_INTEGER: {DECIMAL(5)}
-     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalInteger_LessThan(Integer typeOfDecimalInteger) {
         regTypeOfDecimalInteger(CK_LT, typeOfDecimalInteger);
@@ -872,7 +872,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_INTEGER: {DECIMAL(5)}
-     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalInteger_GreaterEqual(Integer typeOfDecimalInteger) {
         regTypeOfDecimalInteger(CK_GE, typeOfDecimalInteger);
@@ -881,7 +881,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_INTEGER: {DECIMAL(5)}
-     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalInteger The value of typeOfDecimalInteger as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalInteger_LessEqual(Integer typeOfDecimalInteger) {
         regTypeOfDecimalInteger(CK_LE, typeOfDecimalInteger);
@@ -957,7 +957,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_BIGINT: {DECIMAL(12)}
-     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as equal. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalBigint_Equal(Long typeOfDecimalBigint) {
         doSetTypeOfDecimalBigint_Equal(typeOfDecimalBigint);
@@ -970,7 +970,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_BIGINT: {DECIMAL(12)}
-     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as notEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalBigint_NotEqual(Long typeOfDecimalBigint) {
         doSetTypeOfDecimalBigint_NotEqual(typeOfDecimalBigint);
@@ -983,7 +983,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_BIGINT: {DECIMAL(12)}
-     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalBigint_GreaterThan(Long typeOfDecimalBigint) {
         regTypeOfDecimalBigint(CK_GT, typeOfDecimalBigint);
@@ -992,7 +992,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_BIGINT: {DECIMAL(12)}
-     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalBigint_LessThan(Long typeOfDecimalBigint) {
         regTypeOfDecimalBigint(CK_LT, typeOfDecimalBigint);
@@ -1001,7 +1001,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_BIGINT: {DECIMAL(12)}
-     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalBigint_GreaterEqual(Long typeOfDecimalBigint) {
         regTypeOfDecimalBigint(CK_GE, typeOfDecimalBigint);
@@ -1010,7 +1010,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_BIGINT: {DECIMAL(12)}
-     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDecimalBigint The value of typeOfDecimalBigint as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDecimalBigint_LessEqual(Long typeOfDecimalBigint) {
         regTypeOfDecimalBigint(CK_LE, typeOfDecimalBigint);
@@ -1086,7 +1086,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_SMALLINT: {SMALLINT(5)}
-     * @param typeOfSmallint The value of typeOfSmallint as equal. (NullAllowed: if null, no condition)
+     * @param typeOfSmallint The value of typeOfSmallint as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfSmallint_Equal(Integer typeOfSmallint) {
         doSetTypeOfSmallint_Equal(typeOfSmallint);
@@ -1099,7 +1099,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_SMALLINT: {SMALLINT(5)}
-     * @param typeOfSmallint The value of typeOfSmallint as notEqual. (NullAllowed: if null, no condition)
+     * @param typeOfSmallint The value of typeOfSmallint as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfSmallint_NotEqual(Integer typeOfSmallint) {
         doSetTypeOfSmallint_NotEqual(typeOfSmallint);
@@ -1112,7 +1112,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_SMALLINT: {SMALLINT(5)}
-     * @param typeOfSmallint The value of typeOfSmallint as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfSmallint The value of typeOfSmallint as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfSmallint_GreaterThan(Integer typeOfSmallint) {
         regTypeOfSmallint(CK_GT, typeOfSmallint);
@@ -1121,7 +1121,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_SMALLINT: {SMALLINT(5)}
-     * @param typeOfSmallint The value of typeOfSmallint as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfSmallint The value of typeOfSmallint as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfSmallint_LessThan(Integer typeOfSmallint) {
         regTypeOfSmallint(CK_LT, typeOfSmallint);
@@ -1130,7 +1130,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_SMALLINT: {SMALLINT(5)}
-     * @param typeOfSmallint The value of typeOfSmallint as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfSmallint The value of typeOfSmallint as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfSmallint_GreaterEqual(Integer typeOfSmallint) {
         regTypeOfSmallint(CK_GE, typeOfSmallint);
@@ -1139,7 +1139,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_SMALLINT: {SMALLINT(5)}
-     * @param typeOfSmallint The value of typeOfSmallint as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfSmallint The value of typeOfSmallint as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfSmallint_LessEqual(Integer typeOfSmallint) {
         regTypeOfSmallint(CK_LE, typeOfSmallint);
@@ -1215,7 +1215,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_INTEGER: {INTEGER(10)}
-     * @param typeOfInteger The value of typeOfInteger as equal. (NullAllowed: if null, no condition)
+     * @param typeOfInteger The value of typeOfInteger as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_Equal(Integer typeOfInteger) {
         doSetTypeOfInteger_Equal(typeOfInteger);
@@ -1228,7 +1228,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_INTEGER: {INTEGER(10)}
-     * @param typeOfInteger The value of typeOfInteger as notEqual. (NullAllowed: if null, no condition)
+     * @param typeOfInteger The value of typeOfInteger as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_NotEqual(Integer typeOfInteger) {
         doSetTypeOfInteger_NotEqual(typeOfInteger);
@@ -1241,7 +1241,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_INTEGER: {INTEGER(10)}
-     * @param typeOfInteger The value of typeOfInteger as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfInteger The value of typeOfInteger as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_GreaterThan(Integer typeOfInteger) {
         regTypeOfInteger(CK_GT, typeOfInteger);
@@ -1250,7 +1250,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_INTEGER: {INTEGER(10)}
-     * @param typeOfInteger The value of typeOfInteger as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfInteger The value of typeOfInteger as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_LessThan(Integer typeOfInteger) {
         regTypeOfInteger(CK_LT, typeOfInteger);
@@ -1259,7 +1259,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_INTEGER: {INTEGER(10)}
-     * @param typeOfInteger The value of typeOfInteger as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfInteger The value of typeOfInteger as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_GreaterEqual(Integer typeOfInteger) {
         regTypeOfInteger(CK_GE, typeOfInteger);
@@ -1268,7 +1268,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_INTEGER: {INTEGER(10)}
-     * @param typeOfInteger The value of typeOfInteger as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfInteger The value of typeOfInteger as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfInteger_LessEqual(Integer typeOfInteger) {
         regTypeOfInteger(CK_LE, typeOfInteger);
@@ -1344,7 +1344,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_BIGINT: {BIGINT(19)}
-     * @param typeOfBigint The value of typeOfBigint as equal. (NullAllowed: if null, no condition)
+     * @param typeOfBigint The value of typeOfBigint as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfBigint_Equal(Long typeOfBigint) {
         doSetTypeOfBigint_Equal(typeOfBigint);
@@ -1357,7 +1357,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_BIGINT: {BIGINT(19)}
-     * @param typeOfBigint The value of typeOfBigint as notEqual. (NullAllowed: if null, no condition)
+     * @param typeOfBigint The value of typeOfBigint as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfBigint_NotEqual(Long typeOfBigint) {
         doSetTypeOfBigint_NotEqual(typeOfBigint);
@@ -1370,7 +1370,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_BIGINT: {BIGINT(19)}
-     * @param typeOfBigint The value of typeOfBigint as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfBigint The value of typeOfBigint as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfBigint_GreaterThan(Long typeOfBigint) {
         regTypeOfBigint(CK_GT, typeOfBigint);
@@ -1379,7 +1379,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_BIGINT: {BIGINT(19)}
-     * @param typeOfBigint The value of typeOfBigint as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfBigint The value of typeOfBigint as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfBigint_LessThan(Long typeOfBigint) {
         regTypeOfBigint(CK_LT, typeOfBigint);
@@ -1388,7 +1388,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_BIGINT: {BIGINT(19)}
-     * @param typeOfBigint The value of typeOfBigint as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfBigint The value of typeOfBigint as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfBigint_GreaterEqual(Long typeOfBigint) {
         regTypeOfBigint(CK_GE, typeOfBigint);
@@ -1397,7 +1397,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_BIGINT: {BIGINT(19)}
-     * @param typeOfBigint The value of typeOfBigint as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfBigint The value of typeOfBigint as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfBigint_LessEqual(Long typeOfBigint) {
         regTypeOfBigint(CK_LE, typeOfBigint);
@@ -1473,7 +1473,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_FLOAT: {DOUBLE(53)}
-     * @param typeOfFloat The value of typeOfFloat as equal. (NullAllowed: if null, no condition)
+     * @param typeOfFloat The value of typeOfFloat as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfFloat_Equal(java.math.BigDecimal typeOfFloat) {
         doSetTypeOfFloat_Equal(typeOfFloat);
@@ -1486,7 +1486,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_FLOAT: {DOUBLE(53)}
-     * @param typeOfFloat The value of typeOfFloat as notEqual. (NullAllowed: if null, no condition)
+     * @param typeOfFloat The value of typeOfFloat as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfFloat_NotEqual(java.math.BigDecimal typeOfFloat) {
         doSetTypeOfFloat_NotEqual(typeOfFloat);
@@ -1499,7 +1499,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_FLOAT: {DOUBLE(53)}
-     * @param typeOfFloat The value of typeOfFloat as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfFloat The value of typeOfFloat as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfFloat_GreaterThan(java.math.BigDecimal typeOfFloat) {
         regTypeOfFloat(CK_GT, typeOfFloat);
@@ -1508,7 +1508,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_FLOAT: {DOUBLE(53)}
-     * @param typeOfFloat The value of typeOfFloat as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfFloat The value of typeOfFloat as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfFloat_LessThan(java.math.BigDecimal typeOfFloat) {
         regTypeOfFloat(CK_LT, typeOfFloat);
@@ -1517,7 +1517,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_FLOAT: {DOUBLE(53)}
-     * @param typeOfFloat The value of typeOfFloat as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfFloat The value of typeOfFloat as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfFloat_GreaterEqual(java.math.BigDecimal typeOfFloat) {
         regTypeOfFloat(CK_GE, typeOfFloat);
@@ -1526,7 +1526,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_FLOAT: {DOUBLE(53)}
-     * @param typeOfFloat The value of typeOfFloat as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfFloat The value of typeOfFloat as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfFloat_LessEqual(java.math.BigDecimal typeOfFloat) {
         regTypeOfFloat(CK_LE, typeOfFloat);
@@ -1602,7 +1602,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DOUBLE: {DOUBLE(53)}
-     * @param typeOfDouble The value of typeOfDouble as equal. (NullAllowed: if null, no condition)
+     * @param typeOfDouble The value of typeOfDouble as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDouble_Equal(java.math.BigDecimal typeOfDouble) {
         doSetTypeOfDouble_Equal(typeOfDouble);
@@ -1615,7 +1615,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DOUBLE: {DOUBLE(53)}
-     * @param typeOfDouble The value of typeOfDouble as notEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDouble The value of typeOfDouble as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDouble_NotEqual(java.math.BigDecimal typeOfDouble) {
         doSetTypeOfDouble_NotEqual(typeOfDouble);
@@ -1628,7 +1628,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DOUBLE: {DOUBLE(53)}
-     * @param typeOfDouble The value of typeOfDouble as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfDouble The value of typeOfDouble as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDouble_GreaterThan(java.math.BigDecimal typeOfDouble) {
         regTypeOfDouble(CK_GT, typeOfDouble);
@@ -1637,7 +1637,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DOUBLE: {DOUBLE(53)}
-     * @param typeOfDouble The value of typeOfDouble as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfDouble The value of typeOfDouble as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDouble_LessThan(java.math.BigDecimal typeOfDouble) {
         regTypeOfDouble(CK_LT, typeOfDouble);
@@ -1646,7 +1646,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DOUBLE: {DOUBLE(53)}
-     * @param typeOfDouble The value of typeOfDouble as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDouble The value of typeOfDouble as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDouble_GreaterEqual(java.math.BigDecimal typeOfDouble) {
         regTypeOfDouble(CK_GE, typeOfDouble);
@@ -1655,7 +1655,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DOUBLE: {DOUBLE(53)}
-     * @param typeOfDouble The value of typeOfDouble as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDouble The value of typeOfDouble as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDouble_LessEqual(java.math.BigDecimal typeOfDouble) {
         regTypeOfDouble(CK_LE, typeOfDouble);
@@ -1731,7 +1731,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_REAL: {REAL(24)}
-     * @param typeOfReal The value of typeOfReal as equal. (NullAllowed: if null, no condition)
+     * @param typeOfReal The value of typeOfReal as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfReal_Equal(java.math.BigDecimal typeOfReal) {
         doSetTypeOfReal_Equal(typeOfReal);
@@ -1744,7 +1744,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_REAL: {REAL(24)}
-     * @param typeOfReal The value of typeOfReal as notEqual. (NullAllowed: if null, no condition)
+     * @param typeOfReal The value of typeOfReal as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfReal_NotEqual(java.math.BigDecimal typeOfReal) {
         doSetTypeOfReal_NotEqual(typeOfReal);
@@ -1757,7 +1757,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_REAL: {REAL(24)}
-     * @param typeOfReal The value of typeOfReal as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfReal The value of typeOfReal as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfReal_GreaterThan(java.math.BigDecimal typeOfReal) {
         regTypeOfReal(CK_GT, typeOfReal);
@@ -1766,7 +1766,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_REAL: {REAL(24)}
-     * @param typeOfReal The value of typeOfReal as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfReal The value of typeOfReal as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfReal_LessThan(java.math.BigDecimal typeOfReal) {
         regTypeOfReal(CK_LT, typeOfReal);
@@ -1775,7 +1775,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_REAL: {REAL(24)}
-     * @param typeOfReal The value of typeOfReal as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfReal The value of typeOfReal as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfReal_GreaterEqual(java.math.BigDecimal typeOfReal) {
         regTypeOfReal(CK_GE, typeOfReal);
@@ -1784,7 +1784,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_REAL: {REAL(24)}
-     * @param typeOfReal The value of typeOfReal as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfReal The value of typeOfReal as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfReal_LessEqual(java.math.BigDecimal typeOfReal) {
         regTypeOfReal(CK_LE, typeOfReal);
@@ -1860,7 +1860,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DATE: {DATE(10)}
-     * @param typeOfDate The value of typeOfDate as equal. (NullAllowed: if null, no condition)
+     * @param typeOfDate The value of typeOfDate as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDate_Equal(java.util.Date typeOfDate) {
         regTypeOfDate(CK_EQ,  fCTPD(typeOfDate));
@@ -1869,7 +1869,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DATE: {DATE(10)}
-     * @param typeOfDate The value of typeOfDate as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfDate The value of typeOfDate as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDate_GreaterThan(java.util.Date typeOfDate) {
         regTypeOfDate(CK_GT,  fCTPD(typeOfDate));
@@ -1878,7 +1878,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DATE: {DATE(10)}
-     * @param typeOfDate The value of typeOfDate as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfDate The value of typeOfDate as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDate_LessThan(java.util.Date typeOfDate) {
         regTypeOfDate(CK_LT,  fCTPD(typeOfDate));
@@ -1887,7 +1887,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DATE: {DATE(10)}
-     * @param typeOfDate The value of typeOfDate as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDate The value of typeOfDate as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDate_GreaterEqual(java.util.Date typeOfDate) {
         regTypeOfDate(CK_GE,  fCTPD(typeOfDate));
@@ -1896,7 +1896,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DATE: {DATE(10)}
-     * @param typeOfDate The value of typeOfDate as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfDate The value of typeOfDate as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfDate_LessEqual(java.util.Date typeOfDate) {
         regTypeOfDate(CK_LE, fCTPD(typeOfDate));
@@ -1961,7 +1961,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_TIME: {TIME(8)}
-     * @param typeOfTime The value of typeOfTime as equal. (NullAllowed: if null, no condition)
+     * @param typeOfTime The value of typeOfTime as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfTime_Equal(java.sql.Time typeOfTime) {
         regTypeOfTime(CK_EQ,  typeOfTime);
@@ -1970,7 +1970,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_TIME: {TIME(8)}
-     * @param typeOfTime The value of typeOfTime as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfTime The value of typeOfTime as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfTime_GreaterThan(java.sql.Time typeOfTime) {
         regTypeOfTime(CK_GT,  typeOfTime);
@@ -1979,7 +1979,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_TIME: {TIME(8)}
-     * @param typeOfTime The value of typeOfTime as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfTime The value of typeOfTime as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfTime_LessThan(java.sql.Time typeOfTime) {
         regTypeOfTime(CK_LT,  typeOfTime);
@@ -1988,7 +1988,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_TIME: {TIME(8)}
-     * @param typeOfTime The value of typeOfTime as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfTime The value of typeOfTime as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfTime_GreaterEqual(java.sql.Time typeOfTime) {
         regTypeOfTime(CK_GE,  typeOfTime);
@@ -1997,7 +1997,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_TIME: {TIME(8)}
-     * @param typeOfTime The value of typeOfTime as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfTime The value of typeOfTime as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfTime_LessEqual(java.sql.Time typeOfTime) {
         regTypeOfTime(CK_LE, typeOfTime);
@@ -2021,7 +2021,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_TIMESTAMP: {TIMESTAMP(26, 6)}
-     * @param typeOfTimestamp The value of typeOfTimestamp as equal. (NullAllowed: if null, no condition)
+     * @param typeOfTimestamp The value of typeOfTimestamp as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfTimestamp_Equal(java.sql.Timestamp typeOfTimestamp) {
         regTypeOfTimestamp(CK_EQ,  typeOfTimestamp);
@@ -2030,7 +2030,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_TIMESTAMP: {TIMESTAMP(26, 6)}
-     * @param typeOfTimestamp The value of typeOfTimestamp as greaterThan. (NullAllowed: if null, no condition)
+     * @param typeOfTimestamp The value of typeOfTimestamp as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfTimestamp_GreaterThan(java.sql.Timestamp typeOfTimestamp) {
         regTypeOfTimestamp(CK_GT,  typeOfTimestamp);
@@ -2039,7 +2039,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_TIMESTAMP: {TIMESTAMP(26, 6)}
-     * @param typeOfTimestamp The value of typeOfTimestamp as lessThan. (NullAllowed: if null, no condition)
+     * @param typeOfTimestamp The value of typeOfTimestamp as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfTimestamp_LessThan(java.sql.Timestamp typeOfTimestamp) {
         regTypeOfTimestamp(CK_LT,  typeOfTimestamp);
@@ -2048,7 +2048,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_TIMESTAMP: {TIMESTAMP(26, 6)}
-     * @param typeOfTimestamp The value of typeOfTimestamp as greaterEqual. (NullAllowed: if null, no condition)
+     * @param typeOfTimestamp The value of typeOfTimestamp as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfTimestamp_GreaterEqual(java.sql.Timestamp typeOfTimestamp) {
         regTypeOfTimestamp(CK_GE,  typeOfTimestamp);
@@ -2057,7 +2057,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_TIMESTAMP: {TIMESTAMP(26, 6)}
-     * @param typeOfTimestamp The value of typeOfTimestamp as lessEqual. (NullAllowed: if null, no condition)
+     * @param typeOfTimestamp The value of typeOfTimestamp as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setTypeOfTimestamp_LessEqual(java.sql.Timestamp typeOfTimestamp) {
         regTypeOfTimestamp(CK_LE, typeOfTimestamp);

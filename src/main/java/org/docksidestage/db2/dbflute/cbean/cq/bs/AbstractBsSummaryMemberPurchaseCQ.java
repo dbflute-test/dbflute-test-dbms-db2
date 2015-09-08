@@ -46,7 +46,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, ID, NotNull, UnknownType}
-     * @param memberId The value of memberId as equal. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_Equal(Integer memberId) {
         doSetMemberId_Equal(memberId);
@@ -59,7 +59,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, ID, NotNull, UnknownType}
-     * @param memberId The value of memberId as notEqual. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_NotEqual(Integer memberId) {
         doSetMemberId_NotEqual(memberId);
@@ -72,7 +72,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, ID, NotNull, UnknownType}
-     * @param memberId The value of memberId as greaterThan. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_GreaterThan(Integer memberId) {
         regMemberId(CK_GT, memberId);
@@ -81,7 +81,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, ID, NotNull, UnknownType}
-     * @param memberId The value of memberId as lessThan. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_LessThan(Integer memberId) {
         regMemberId(CK_LT, memberId);
@@ -90,7 +90,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, ID, NotNull, UnknownType}
-     * @param memberId The value of memberId as greaterEqual. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_GreaterEqual(Integer memberId) {
         regMemberId(CK_GE, memberId);
@@ -99,7 +99,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * MEMBER_ID: {PK, ID, NotNull, UnknownType}
-     * @param memberId The value of memberId as lessEqual. (NullAllowed: if null, no condition)
+     * @param memberId The value of memberId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberId_LessEqual(Integer memberId) {
         regMemberId(CK_LE, memberId);
@@ -175,7 +175,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * ALLSUM_PURCHASE_PRICE: {UnknownType}
-     * @param allsumPurchasePrice The value of allsumPurchasePrice as equal. (NullAllowed: if null, no condition)
+     * @param allsumPurchasePrice The value of allsumPurchasePrice as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_Equal(Integer allsumPurchasePrice) {
         doSetAllsumPurchasePrice_Equal(allsumPurchasePrice);
@@ -188,7 +188,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * ALLSUM_PURCHASE_PRICE: {UnknownType}
-     * @param allsumPurchasePrice The value of allsumPurchasePrice as notEqual. (NullAllowed: if null, no condition)
+     * @param allsumPurchasePrice The value of allsumPurchasePrice as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_NotEqual(Integer allsumPurchasePrice) {
         doSetAllsumPurchasePrice_NotEqual(allsumPurchasePrice);
@@ -201,7 +201,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * ALLSUM_PURCHASE_PRICE: {UnknownType}
-     * @param allsumPurchasePrice The value of allsumPurchasePrice as greaterThan. (NullAllowed: if null, no condition)
+     * @param allsumPurchasePrice The value of allsumPurchasePrice as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_GreaterThan(Integer allsumPurchasePrice) {
         regAllsumPurchasePrice(CK_GT, allsumPurchasePrice);
@@ -210,7 +210,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * ALLSUM_PURCHASE_PRICE: {UnknownType}
-     * @param allsumPurchasePrice The value of allsumPurchasePrice as lessThan. (NullAllowed: if null, no condition)
+     * @param allsumPurchasePrice The value of allsumPurchasePrice as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_LessThan(Integer allsumPurchasePrice) {
         regAllsumPurchasePrice(CK_LT, allsumPurchasePrice);
@@ -219,7 +219,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * ALLSUM_PURCHASE_PRICE: {UnknownType}
-     * @param allsumPurchasePrice The value of allsumPurchasePrice as greaterEqual. (NullAllowed: if null, no condition)
+     * @param allsumPurchasePrice The value of allsumPurchasePrice as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_GreaterEqual(Integer allsumPurchasePrice) {
         regAllsumPurchasePrice(CK_GE, allsumPurchasePrice);
@@ -228,7 +228,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * ALLSUM_PURCHASE_PRICE: {UnknownType}
-     * @param allsumPurchasePrice The value of allsumPurchasePrice as lessEqual. (NullAllowed: if null, no condition)
+     * @param allsumPurchasePrice The value of allsumPurchasePrice as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setAllsumPurchasePrice_LessEqual(Integer allsumPurchasePrice) {
         regAllsumPurchasePrice(CK_LE, allsumPurchasePrice);
@@ -304,7 +304,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
      * LATEST_PURCHASE_DATETIME: {UnknownType}
-     * @param latestPurchaseDatetime The value of latestPurchaseDatetime as equal. (NullAllowed: if null, no condition)
+     * @param latestPurchaseDatetime The value of latestPurchaseDatetime as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setLatestPurchaseDatetime_Equal(java.util.Date latestPurchaseDatetime) {
         regLatestPurchaseDatetime(CK_EQ,  fCTPD(latestPurchaseDatetime));
@@ -313,7 +313,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
      * LATEST_PURCHASE_DATETIME: {UnknownType}
-     * @param latestPurchaseDatetime The value of latestPurchaseDatetime as greaterThan. (NullAllowed: if null, no condition)
+     * @param latestPurchaseDatetime The value of latestPurchaseDatetime as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setLatestPurchaseDatetime_GreaterThan(java.util.Date latestPurchaseDatetime) {
         regLatestPurchaseDatetime(CK_GT,  fCTPD(latestPurchaseDatetime));
@@ -322,7 +322,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
      * LATEST_PURCHASE_DATETIME: {UnknownType}
-     * @param latestPurchaseDatetime The value of latestPurchaseDatetime as lessThan. (NullAllowed: if null, no condition)
+     * @param latestPurchaseDatetime The value of latestPurchaseDatetime as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setLatestPurchaseDatetime_LessThan(java.util.Date latestPurchaseDatetime) {
         regLatestPurchaseDatetime(CK_LT,  fCTPD(latestPurchaseDatetime));
@@ -331,7 +331,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * LATEST_PURCHASE_DATETIME: {UnknownType}
-     * @param latestPurchaseDatetime The value of latestPurchaseDatetime as greaterEqual. (NullAllowed: if null, no condition)
+     * @param latestPurchaseDatetime The value of latestPurchaseDatetime as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setLatestPurchaseDatetime_GreaterEqual(java.util.Date latestPurchaseDatetime) {
         regLatestPurchaseDatetime(CK_GE,  fCTPD(latestPurchaseDatetime));
@@ -340,7 +340,7 @@ public abstract class AbstractBsSummaryMemberPurchaseCQ extends AbstractConditio
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
      * LATEST_PURCHASE_DATETIME: {UnknownType}
-     * @param latestPurchaseDatetime The value of latestPurchaseDatetime as lessEqual. (NullAllowed: if null, no condition)
+     * @param latestPurchaseDatetime The value of latestPurchaseDatetime as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setLatestPurchaseDatetime_LessEqual(java.util.Date latestPurchaseDatetime) {
         regLatestPurchaseDatetime(CK_LE, fCTPD(latestPurchaseDatetime));
