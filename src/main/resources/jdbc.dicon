@@ -12,7 +12,7 @@
 			"com.ibm.db2.jcc.DB2Driver"
 		</property>
 		<property name="URL">
-			@org.docksidestage.db2.JdbcDiconResolver@resolveUrl("jdbc:db2://localhost:50001/dfexdb")
+			@org.docksidestage.db2.JdbcDiconResolver@resolveUrl("jdbc:db2://localhost:50000/dfexdb")
 		</property>
 		<property name="user">@org.docksidestage.db2.JdbcDiconResolver@resolveUser("db2inst1")</property>
 		<property name="password">@org.docksidestage.db2.JdbcDiconResolver@resolvePassword()</property>

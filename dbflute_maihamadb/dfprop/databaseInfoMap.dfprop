@@ -16,7 +16,7 @@
 #
 map:{
     ; driver   = com.ibm.db2.jcc.DB2Driver
-    ; url      = df:dfprop/local-url.txt|jdbc:db2://localhost:50002/dfexdb
+    ; url      = df:dfprop/local-url.txt|jdbc:db2://localhost:50000/dfexdb
     ; schema   = DFEXDB
     ; user     = df:dfprop/local-user.txt|db2inst1
     ; password = df:dfprop/local-password.txt

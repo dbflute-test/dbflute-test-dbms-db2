@@ -8,11 +8,18 @@ The example project for DB2 and DBFlute.
 # ========================================================================================
 #                                                                              Environment
 #                                                                              ===========
+[Maven2]
+This project needs maven2 for compile.
+
+[JDBC]
+Put db2jcc.jar to both 'lib' and 'dbflute_maihamadb/extlib'.
+
 [DB2]
 create database dfexdb using codeset UTF-8 territory JP
 
 [DBFlute]
-TODO jflute
+prepare local-url.txt, local-user.txt, local-url.txt if it needs.
+(see databaseInfoMap.dfprop for the detail)
 
 
 # ========================================================================================
