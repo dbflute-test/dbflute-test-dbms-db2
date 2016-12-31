@@ -29,6 +29,11 @@ public abstract class UnitContainerTestCase extends ContainerTestCase {
     protected boolean isDestroyContainerAtTearDown() {
         return true;
     }
+    
+    @Override
+    protected boolean isUseTestCaseLooseBinding() {
+        return true;
+    }
 
     // ===================================================================================
     //                                                                         Data Helper

@@ -14,31 +14,31 @@ import org.docksidestage.db2.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     EXCEPT_ID
- * 
+ *
  * [column]
  *     EXCEPT_ID, EXCEPT_NAME
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     
- * 
+ *
  * [foreign table]
  *     
- * 
+ *
  * [referrer table]
  *     ALIAS_REF_EXCEPT
- * 
+ *
  * [foreign property]
  *     
- * 
+ *
  * [referrer property]
  *     aliasRefExceptList
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Long exceptId = entity.getExceptId();
@@ -114,7 +114,7 @@ public abstract class BsAliasExcept extends AbstractEntity implements DomainEnti
         _aliasRefExceptList = aliasRefExceptList;
     }
 
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

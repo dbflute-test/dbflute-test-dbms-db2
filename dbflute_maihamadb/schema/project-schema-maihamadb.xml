@@ -4,7 +4,7 @@
 <database name="DFEXDB">
     <table name="ALIAS_EXCEPT" schema="DFEXDB" type="ALIAS">
         <column dbType="DECIMAL" javaType="Long" name="EXCEPT_ID"
-            pkName="SQL151231183024580" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160547220" pkPosition="1" primaryKey="true"
             required="true" size="16" type="DECIMAL"/>
         <column dbType="VARCHAR" javaType="String" name="EXCEPT_NAME"
             size="256" type="VARCHAR"/>
@@ -13,7 +13,7 @@
         <column autoIncrement="true"
             comment="会員ID: 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。"
             dbType="INTEGER" javaType="Integer" name="MEMBER_ID"
-            pkName="SQL151231183024060" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160504690" pkPosition="1" primaryKey="true"
             required="true" size="10" type="INTEGER"/>
         <column
             comment="会員名称: 会員のフルネームの名称。&#xa;苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。"
@@ -68,7 +68,7 @@
     <table name="ALIAS_MEMBER_LOGIN" schema="DFEXDB" type="ALIAS">
         <column autoIncrement="true" comment="会員ログインID: "
             dbType="BIGINT" javaType="Long" name="MEMBER_LOGIN_ID"
-            pkName="SQL151231183024090" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160510020" pkPosition="1" primaryKey="true"
             required="true" size="19" type="BIGINT"/>
         <column comment="会員ID: " dbType="INTEGER" javaType="Integer"
             name="MEMBER_ID" required="true" size="10" type="INTEGER"/>
@@ -98,7 +98,7 @@
     </table>
     <table name="ALIAS_REF_EXCEPT" schema="DFEXDB" type="ALIAS">
         <column dbType="DECIMAL" javaType="Long" name="REF_EXCEPT_ID"
-            pkName="SQL151231183024590" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160548680" pkPosition="1" primaryKey="true"
             required="true" size="16" type="DECIMAL"/>
         <column dbType="DECIMAL" javaType="Long" name="EXCEPT_ID"
             required="true" size="16" type="DECIMAL"/>
@@ -112,7 +112,7 @@
         <column autoIncrement="true"
             comment="会員ID: 連番として自動採番される。会員IDだけに限らず採番方法はDBMS次第。"
             dbType="INTEGER" javaType="Integer" name="MEMBER_ID"
-            pkName="SQL151231183024060" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160504690" pkPosition="1" primaryKey="true"
             required="true" size="10" type="INTEGER"/>
         <column
             comment="会員名称: 会員のフルネームの名称。&#xa;苗字と名前を分けて管理することが多いが、ここでは単純にひとまとめ。"
@@ -170,7 +170,7 @@
         <column autoIncrement="true"
             comment="会員住所ID: 会員住所を識別するID。&#xa;期間ごとに同じ会員のデータを保持することがあるため、これは単なるPKであってFKではない。"
             dbType="INTEGER" javaType="Integer" name="MEMBER_ADDRESS_ID"
-            pkName="SQL151231183024070" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160506530" pkPosition="1" primaryKey="true"
             required="true" size="10" type="INTEGER"/>
         <column
             comment="会員ID: 会員を参照するID。&#xa;期間ごとのデータがあるので、これだけではユニークにはならない。有効開始日と合わせて複合ユニーク制約となるが、厳密には完全な制約にはなっていない。"
@@ -215,7 +215,7 @@
         name="MEMBER_FOLLOWING" schema="DFEXDB" type="TABLE">
         <column autoIncrement="true" comment="会員フォローイングID: 連番"
             dbType="BIGINT" javaType="Long" name="MEMBER_FOLLOWING_ID"
-            pkName="SQL151231183024080" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160508400" pkPosition="1" primaryKey="true"
             required="true" size="19" type="BIGINT"/>
         <column comment="わたし: 気になった人がいて...勇気を振り絞った会員のID。"
             dbType="INTEGER" javaType="Integer" name="MY_MEMBER_ID"
@@ -249,7 +249,7 @@
         name="MEMBER_LOGIN" schema="DFEXDB" type="TABLE">
         <column autoIncrement="true" comment="会員ログインID: "
             dbType="BIGINT" javaType="Long" name="MEMBER_LOGIN_ID"
-            pkName="SQL151231183024090" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160510020" pkPosition="1" primaryKey="true"
             required="true" size="19" type="BIGINT"/>
         <column comment="会員ID: " dbType="INTEGER" javaType="Integer"
             name="MEMBER_ID" required="true" size="10" type="INTEGER"/>
@@ -282,7 +282,7 @@
         name="MEMBER_SECURITY" schema="DFEXDB" type="TABLE">
         <column comment="会員ID: そのまま one-to-one を構成するためのFKとなる。"
             dbType="INTEGER" javaType="Integer" name="MEMBER_ID"
-            pkName="SQL151231183024100" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160511640" pkPosition="1" primaryKey="true"
             required="true" size="10" type="INTEGER"/>
         <column
             comment="ログインパスワード: ログイン時に利用するパスワード。&#xa;本当は良くないが、Exampleなのでひとまず暗号化していない。"
@@ -318,7 +318,7 @@
         <column autoIncrement="true"
             comment="会員サービスID: 独立した主キーとなるが、実質的に会員IDとは one-to-one である。"
             dbType="INTEGER" javaType="Integer" name="MEMBER_SERVICE_ID"
-            pkName="SQL151231183024110" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160513820" pkPosition="1" primaryKey="true"
             required="true" size="10" type="INTEGER"/>
         <column comment="会員ID: 会員を参照するID。ユニークなので、会員とは one-to-one の関係に。"
             dbType="INTEGER" javaType="Integer" name="MEMBER_ID"
@@ -356,7 +356,7 @@
         name="MEMBER_STATUS" schema="DFEXDB" type="TABLE">
         <column comment="会員ステータスコード: 会員ステータスを識別するコード。" dbType="CHAR"
             javaType="String" name="MEMBER_STATUS_CODE"
-            pkName="SQL151231183024210" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160528830" pkPosition="1" primaryKey="true"
             required="true" size="3" type="CHAR"/>
         <column comment="会員ステータス名称: 表示用の名称。" dbType="VARCHAR"
             javaType="String" name="MEMBER_STATUS_NAME" required="true"
@@ -377,7 +377,7 @@
         comment="会員退会情報: 退会会員の退会に関する詳細な情報。&#xa;退会会員のみデータが存在し、&quot;1 : 0..1&quot; のパターンの one-to-one である。"
         name="MEMBER_WITHDRAWAL" schema="DFEXDB" type="TABLE">
         <column dbType="INTEGER" javaType="Integer" name="MEMBER_ID"
-            pkName="SQL151231183024130" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160517760" pkPosition="1" primaryKey="true"
             required="true" size="10" type="INTEGER"/>
         <column
             comment="退会理由コード: 定型的な退会した理由を参照するコード。&#xa;何も言わずに退会する会員もいるので必須項目ではない。"
@@ -411,7 +411,7 @@
     </table>
     <table comment="商品:" name="PRODUCT" schema="DFEXDB" type="TABLE">
         <column autoIncrement="true" dbType="INTEGER" javaType="Integer"
-            name="PRODUCT_ID" pkName="SQL151231183024150" pkPosition="1"
+            name="PRODUCT_ID" pkName="SQL161231160520770" pkPosition="1"
             primaryKey="true" required="true" size="10" type="INTEGER"/>
         <column
             comment="商品名称: ExampleDBとして、コメントの少ないケースを表現するため、あえてコメントを控えている。&#xa;実業務ではしっかりとコメントを入れることが強く強く推奨される。"
@@ -456,7 +456,7 @@
         name="PRODUCT_CATEGORY" schema="DFEXDB" type="TABLE">
         <column comment="商品カテゴリコード: 自分のテーブルの別のレコードからも参照される。"
             dbType="CHAR" javaType="String" name="PRODUCT_CATEGORY_CODE"
-            pkName="SQL151231183024160" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160522410" pkPosition="1" primaryKey="true"
             required="true" size="3" type="CHAR"/>
         <column comment="商品カテゴリ名称: " dbType="VARCHAR" javaType="String"
             name="PRODUCT_CATEGORY_NAME" required="true" size="50" type="VARCHAR"/>
@@ -472,7 +472,7 @@
         name="PRODUCT_STATUS" schema="DFEXDB" type="TABLE">
         <column comment="商品ステータスコード: 商品ステータスを識別するコード。" dbType="CHAR"
             javaType="String" name="PRODUCT_STATUS_CODE"
-            pkName="SQL151231183024170" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160523840" pkPosition="1" primaryKey="true"
             required="true" size="3" type="CHAR"/>
         <column
             comment="商品ステータス名称: 表示用の名称、英語名カラムがないのでそのままメソッド名の一部としても利用される。"
@@ -488,7 +488,7 @@
     <table comment="購入: 一つの商品に対する購入を表現する(購入履歴とも言える)。" name="PURCHASE"
         schema="DFEXDB" type="TABLE">
         <column autoIncrement="true" dbType="BIGINT" javaType="Long"
-            name="PURCHASE_ID" pkName="SQL151231183024140"
+            name="PURCHASE_ID" pkName="SQL161231160519210"
             pkPosition="1" primaryKey="true" required="true" size="19" type="BIGINT"/>
         <column
             comment="会員ID: 会員を参照するID。&#xa;購入を識別する自然キー(複合ユニーク制約)の筆頭要素。"
@@ -549,7 +549,7 @@
         <column
             comment="地域ID: 地域をしっかりと識別するID。&#xa;珍しく(固定的な)マスタテーブルとしては数値だが、Exampleなのでやはり色々なパターンがないとね、ってところで。"
             dbType="INTEGER" javaType="Integer" name="REGION_ID"
-            pkName="SQL151231183024180" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160525300" pkPosition="1" primaryKey="true"
             required="true" size="10" type="INTEGER"/>
         <column comment="地域名称: 地域を漠然と表す名称。" dbType="VARCHAR"
             javaType="String" name="REGION_NAME" required="true"
@@ -559,7 +559,7 @@
         name="SERVICE_RANK" schema="DFEXDB" type="TABLE">
         <column comment="サービスランクコード: サービスランクを識別するコード。" dbType="CHAR"
             javaType="String" name="SERVICE_RANK_CODE"
-            pkName="SQL151231183024200" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160527320" pkPosition="1" primaryKey="true"
             required="true" size="3" type="CHAR"/>
         <column
             comment="サービスランク名称: サービスランクの名称。&#xa;ゴールドとかプラチナとか基本的には威厳のある名前"
@@ -594,7 +594,7 @@
     </table>
     <table name="VENDOR_CHECK" schema="DFEXDB" type="TABLE">
         <column dbType="DECIMAL" javaType="Long" name="VENDOR_CHECK_ID"
-            pkName="SQL151231183024570" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160545570" pkPosition="1" primaryKey="true"
             required="true" size="16" type="DECIMAL"/>
         <column dbType="CHAR" javaType="String" name="TYPE_OF_CHAR"
             size="3" type="CHAR"/>
@@ -643,7 +643,7 @@
     </table>
     <table name="WHITE_REF_TARGET" schema="DFEXDB" type="TABLE">
         <column dbType="DECIMAL" javaType="Long" name="REF_TARGET_ID"
-            pkName="SQL151231183024610" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160551520" pkPosition="1" primaryKey="true"
             required="true" size="16" type="DECIMAL"/>
         <column dbType="DECIMAL" javaType="Long" name="TARGET_ID"
             required="true" size="16" type="DECIMAL"/>
@@ -653,7 +653,7 @@
     </table>
     <table name="WHITE_TARGET" schema="DFEXDB" type="TABLE">
         <column dbType="DECIMAL" javaType="Long" name="TARGET_ID"
-            pkName="SQL151231183024600" pkPosition="1" primaryKey="true"
+            pkName="SQL161231160550040" pkPosition="1" primaryKey="true"
             required="true" size="16" type="DECIMAL"/>
         <column dbType="VARCHAR" javaType="String" name="TARGET_NAME"
             size="256" type="VARCHAR"/>
@@ -661,7 +661,7 @@
     <table comment="退会理由: 会員に選ばせる定型的な退会理由のマスタ。そういえば、これ表示順カラムがないですねぇ..."
         name="WITHDRAWAL_REASON" schema="DFEXDB" type="TABLE">
         <column comment="退会理由コード: " dbType="CHAR" javaType="String"
-            name="WITHDRAWAL_REASON_CODE" pkName="SQL151231183024220"
+            name="WITHDRAWAL_REASON_CODE" pkName="SQL161231160531400"
             pkPosition="1" primaryKey="true" required="true" size="3" type="CHAR"/>
         <column
             comment="退会理由テキスト: 退会理由の内容。&#xa;テキスト形式なので目いっぱい書けるが、そうするとUI側できれいに見せるのが大変でしょうね。"
@@ -682,26 +682,26 @@
             primaryKey="false" required="false" type="DATE"/>
     </table>
     <sequenceGroup>
-        <sequence incrementSize="1" maximumValue="2147483647"
-            minimumValue="1" name="SQL151231183024040" schema="DFEXDB"/>
-        <sequence incrementSize="1" maximumValue="2147483647"
-            minimumValue="1" name="SQL151231183024070" schema="DFEXDB"/>
-        <sequence incrementSize="1" maximumValue="9223372036854775807"
-            minimumValue="1" name="SQL151231183024080" schema="DFEXDB"/>
-        <sequence incrementSize="1" maximumValue="9223372036854775807"
-            minimumValue="1" name="SQL151231183024090" schema="DFEXDB"/>
-        <sequence incrementSize="1" maximumValue="2147483647"
-            minimumValue="1" name="SQL151231183024110" schema="DFEXDB"/>
-        <sequence incrementSize="1" maximumValue="9223372036854775807"
-            minimumValue="1" name="SQL151231183024130" schema="DFEXDB"/>
-        <sequence incrementSize="1" maximumValue="2147483647"
-            minimumValue="1" name="SQL151231183024140" schema="DFEXDB"/>
-        <sequence incrementSize="1" maximumValue="2147483647"
-            minimumValue="1" name="SEQ_NOT_RELATED_TO_TABLE" schema="DFEXDB"/>
         <sequence incrementSize="4" maximumValue="2147483647"
             minimumValue="1" name="SEQ_MEMBER_LOGIN" schema="DFEXDB"/>
         <sequence incrementSize="1" maximumValue="2147483647"
+            minimumValue="1" name="SEQ_NOT_RELATED_TO_TABLE" schema="DFEXDB"/>
+        <sequence incrementSize="1" maximumValue="2147483647"
             minimumValue="1" name="SEQ_PURCHASE" schema="DFEXDB"/>
+        <sequence incrementSize="1" maximumValue="2147483647"
+            minimumValue="1" name="SQL161231160502780" schema="DFEXDB"/>
+        <sequence incrementSize="1" maximumValue="2147483647"
+            minimumValue="1" name="SQL161231160504800" schema="DFEXDB"/>
+        <sequence incrementSize="1" maximumValue="9223372036854775807"
+            minimumValue="1" name="SQL161231160506670" schema="DFEXDB"/>
+        <sequence incrementSize="1" maximumValue="9223372036854775807"
+            minimumValue="1" name="SQL161231160508490" schema="DFEXDB"/>
+        <sequence incrementSize="1" maximumValue="2147483647"
+            minimumValue="1" name="SQL161231160511720" schema="DFEXDB"/>
+        <sequence incrementSize="1" maximumValue="9223372036854775807"
+            minimumValue="1" name="SQL161231160517860" schema="DFEXDB"/>
+        <sequence incrementSize="1" maximumValue="2147483647"
+            minimumValue="1" name="SQL161231160519280" schema="DFEXDB"/>
     </sequenceGroup>
     <procedureGroup>
         <procedure name="SP_IN_OUT_PARAMETER" schema="DFEXDB"

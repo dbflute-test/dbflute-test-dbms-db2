@@ -14,31 +14,31 @@ import org.docksidestage.db2.dbflute.exentity.*;
  * <pre>
  * [primary-key]
  *     VENDOR_CHECK_ID
- * 
+ *
  * [column]
  *     VENDOR_CHECK_ID, TYPE_OF_CHAR, TYPE_OF_CHAR_FOR_BIT_DATA, TYPE_OF_VARCHAR, TYPE_OF_VARCHAR_FOR_BIT_DATA, TYPE_OF_CLOB, TYPE_OF_DBCLOB, TYPE_OF_DECIMAL_DECIMAL, TYPE_OF_DECIMAL_INTEGER, TYPE_OF_DECIMAL_BIGINT, TYPE_OF_SMALLINT, TYPE_OF_INTEGER, TYPE_OF_BIGINT, TYPE_OF_FLOAT, TYPE_OF_DOUBLE, TYPE_OF_REAL, TYPE_OF_DATE, TYPE_OF_TIME, TYPE_OF_TIMESTAMP, TYPE_OF_BLOB, TYPE_OF_GRAPHIC, TYPE_OF_VARGRAPHIC, TYPE_OF_LONG_VARGRAPHIC
- * 
+ *
  * [sequence]
  *     
- * 
+ *
  * [identity]
  *     
- * 
+ *
  * [version-no]
  *     
- * 
+ *
  * [foreign table]
  *     
- * 
+ *
  * [referrer table]
  *     
- * 
+ *
  * [foreign property]
  *     
- * 
+ *
  * [referrer property]
  *     
- * 
+ *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Long vendorCheckId = entity.getVendorCheckId();
@@ -199,7 +199,7 @@ public abstract class BsVendorCheck extends AbstractEntity implements DomainEnti
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
-    protected <ELEMENT> List<ELEMENT> newReferrerList() {
+    protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
         return new ArrayList<ELEMENT>();
     }
 

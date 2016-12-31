@@ -180,7 +180,7 @@ public class WxCBDreamCruiseDB2Test extends UnitContainerTestCase {
         // ## Arrange ##
         {
             Member member = new Member();
-            member.setBirthdate(toDate("2014/09/10"));
+            member.setBirthdate(toUtilDate("2014/09/10"));
             memberBhv.varyingQueryUpdate(member, new MemberCB(), op -> op.allowNonQueryUpdate());
         }
         MemberCB cb = new MemberCB();
@@ -192,7 +192,7 @@ public class WxCBDreamCruiseDB2Test extends UnitContainerTestCase {
             }
         }).lessEqual(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toDate("2015/04/05"));
+                cb.mysticRhythms(toUtilDate("2015/04/05"));
             }
         }).convert(op -> op.addMonth(dreamCruiseCB.specify().columnVersionNo()));
         cb.columnQuery(new SpecifyQuery<MemberCB>() {
@@ -201,7 +201,7 @@ public class WxCBDreamCruiseDB2Test extends UnitContainerTestCase {
             }
         }).lessThan(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toDate("2014/09/01"));
+                cb.mysticRhythms(toUtilDate("2014/09/01"));
             }
         }).convert(op -> op.addDay(dreamCruiseCB.specify().columnMemberId()).addDay(1));
         cb.columnQuery(new SpecifyQuery<MemberCB>() {
@@ -210,7 +210,7 @@ public class WxCBDreamCruiseDB2Test extends UnitContainerTestCase {
             }
         }).greaterEqual(new SpecifyQuery<MemberCB>() {
             public void specify(MemberCB cb) {
-                cb.mysticRhythms(toDate("2006/09/26"));
+                cb.mysticRhythms(toUtilDate("2006/09/26"));
             }
         });
 
