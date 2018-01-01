@@ -93,7 +93,7 @@ public class BsAliasExceptCQ extends AbstractBsAliasExceptCQ {
     public Map<String, Object> xdfgetExceptId_QueryDerivedReferrer_AliasRefExceptListParameter() { return xgetSQuePmMap("exceptId_QueryDerivedReferrer_AliasRefExceptList"); }
     public String keepExceptId_QueryDerivedReferrer_AliasRefExceptListParameter(Object pm) { return xkeepSQuePm("exceptId_QueryDerivedReferrer_AliasRefExceptList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * EXCEPT_ID: {PK, NotNull, DECIMAL(16)}
      * @return this. (NotNull)
@@ -113,7 +113,7 @@ public class BsAliasExceptCQ extends AbstractBsAliasExceptCQ {
       return _exceptName; }
     protected ConditionValue xgetCValueExceptName() { return xdfgetExceptName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * EXCEPT_NAME: {VARCHAR(256)}
      * @return this. (NotNull)

@@ -1076,8 +1076,8 @@ public abstract class BsWhiteTargetBhv extends AbstractBehaviorWritable<WhiteTar
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * whiteTargetBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * whiteTargetBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * whiteTargetBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * whiteTargetBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * whiteTargetBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1085,7 +1085,7 @@ public abstract class BsWhiteTargetBhv extends AbstractBehaviorWritable<WhiteTar
      * whiteTargetBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * whiteTargetBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * whiteTargetBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * whiteTargetBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * whiteTargetBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1093,7 +1093,7 @@ public abstract class BsWhiteTargetBhv extends AbstractBehaviorWritable<WhiteTar
      * whiteTargetBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * whiteTargetBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * whiteTargetBhv.outideSql().removeBlockComment().selectList()
      * whiteTargetBhv.outideSql().removeLineComment().selectList()
      * whiteTargetBhv.outideSql().formatSql().selectList()

@@ -1076,8 +1076,8 @@ public abstract class BsAliasExceptBhv extends AbstractBehaviorWritable<AliasExc
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * aliasExceptBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * aliasExceptBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * aliasExceptBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * aliasExceptBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * aliasExceptBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1085,7 +1085,7 @@ public abstract class BsAliasExceptBhv extends AbstractBehaviorWritable<AliasExc
      * aliasExceptBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * aliasExceptBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * aliasExceptBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * aliasExceptBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * aliasExceptBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1093,7 +1093,7 @@ public abstract class BsAliasExceptBhv extends AbstractBehaviorWritable<AliasExc
      * aliasExceptBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * aliasExceptBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * aliasExceptBhv.outideSql().removeBlockComment().selectList()
      * aliasExceptBhv.outideSql().removeLineComment().selectList()
      * aliasExceptBhv.outideSql().formatSql().selectList()

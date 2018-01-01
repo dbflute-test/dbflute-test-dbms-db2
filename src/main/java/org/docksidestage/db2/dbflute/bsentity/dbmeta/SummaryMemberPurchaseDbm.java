@@ -65,9 +65,9 @@ public class SummaryMemberPurchaseDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnMemberId = cci("MEMBER_ID", "MEMBER_ID", null, null, Integer.class, "memberId", null, true, true, true, "UnknownType", null, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnAllsumPurchasePrice = cci("ALLSUM_PURCHASE_PRICE", "ALLSUM_PURCHASE_PRICE", null, null, Integer.class, "allsumPurchasePrice", null, false, false, false, "UnknownType", null, null, null, false, null, null, null, null, null, false);
-    protected final ColumnInfo _columnLatestPurchaseDatetime = cci("LATEST_PURCHASE_DATETIME", "LATEST_PURCHASE_DATETIME", null, null, java.util.Date.class, "latestPurchaseDatetime", null, false, false, false, "UnknownType", null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnMemberId = cci("MEMBER_ID", "MEMBER_ID", null, null, Integer.class, "memberId", null, true, true, true, "UnknownType", null, null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnAllsumPurchasePrice = cci("ALLSUM_PURCHASE_PRICE", "ALLSUM_PURCHASE_PRICE", null, null, Integer.class, "allsumPurchasePrice", null, false, false, false, "UnknownType", null, null, null, null, false, null, null, null, null, null, false);
+    protected final ColumnInfo _columnLatestPurchaseDatetime = cci("LATEST_PURCHASE_DATETIME", "LATEST_PURCHASE_DATETIME", null, null, java.util.Date.class, "latestPurchaseDatetime", null, false, false, false, "UnknownType", null, null, null, null, false, null, null, null, null, null, false);
 
     /**
      * MEMBER_ID: {PK, ID, NotNull, UnknownType}

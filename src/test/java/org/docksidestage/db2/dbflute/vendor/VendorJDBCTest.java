@@ -58,7 +58,7 @@ public class VendorJDBCTest extends UnitContainerTestCase {
     public void doTest_ResultSet_sensitiveOrNot(final TestingResultSetType resultSetType) {
         // ## Arrange ##
         final ListResultBean<Member> beforeList = memberBhv.selectList(new MemberCB());
-        final Date updateDate = currentDate();
+        final Date updateDate = currentUtilDate();
         final boolean sensitive = TestingResultSetType.SCROLL_SENSITIVE.equals(resultSetType);
 
         // ## Act ##
@@ -219,7 +219,7 @@ public class VendorJDBCTest extends UnitContainerTestCase {
             {
                 Member member = new Member();
                 member.setMemberId(3);
-                member.setBirthdate(currentDate());
+                member.setBirthdate(currentUtilDate());
                 memberBhv.updateNonstrict(member);
             }
             {

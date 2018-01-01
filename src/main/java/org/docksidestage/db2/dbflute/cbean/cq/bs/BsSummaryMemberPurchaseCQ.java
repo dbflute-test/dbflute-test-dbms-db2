@@ -79,7 +79,7 @@ public class BsSummaryMemberPurchaseCQ extends AbstractBsSummaryMemberPurchaseCQ
       return _memberId; }
     protected ConditionValue xgetCValueMemberId() { return xdfgetMemberId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * MEMBER_ID: {PK, ID, NotNull, UnknownType}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsSummaryMemberPurchaseCQ extends AbstractBsSummaryMemberPurchaseCQ
       return _allsumPurchasePrice; }
     protected ConditionValue xgetCValueAllsumPurchasePrice() { return xdfgetAllsumPurchasePrice(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * ALLSUM_PURCHASE_PRICE: {UnknownType}
      * @return this. (NotNull)
@@ -119,7 +119,7 @@ public class BsSummaryMemberPurchaseCQ extends AbstractBsSummaryMemberPurchaseCQ
       return _latestPurchaseDatetime; }
     protected ConditionValue xgetCValueLatestPurchaseDatetime() { return xdfgetLatestPurchaseDatetime(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * LATEST_PURCHASE_DATETIME: {UnknownType}
      * @return this. (NotNull)

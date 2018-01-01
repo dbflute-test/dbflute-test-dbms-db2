@@ -110,8 +110,8 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * (会員サービスID)MEMBER_SERVICE_ID: {PK, ID, NotNull, INTEGER(10)}
-     * @param minNumber The min number of memberServiceId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of memberServiceId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of memberServiceId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of memberServiceId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setMemberServiceId_RangeOf(Integer minNumber, Integer maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -123,8 +123,8 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * (会員サービスID)MEMBER_SERVICE_ID: {PK, ID, NotNull, INTEGER(10)}
-     * @param minNumber The min number of memberServiceId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of memberServiceId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of memberServiceId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of memberServiceId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setMemberServiceId_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
@@ -134,7 +134,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * (会員サービスID)MEMBER_SERVICE_ID: {PK, ID, NotNull, INTEGER(10)}
-     * @param memberServiceIdList The collection of memberServiceId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param memberServiceIdList The collection of memberServiceId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setMemberServiceId_InScope(Collection<Integer> memberServiceIdList) {
         doSetMemberServiceId_InScope(memberServiceIdList);
@@ -147,7 +147,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * (会員サービスID)MEMBER_SERVICE_ID: {PK, ID, NotNull, INTEGER(10)}
-     * @param memberServiceIdList The collection of memberServiceId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param memberServiceIdList The collection of memberServiceId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setMemberServiceId_NotInScope(Collection<Integer> memberServiceIdList) {
         doSetMemberServiceId_NotInScope(memberServiceIdList);
@@ -239,8 +239,8 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * (会員ID)MEMBER_ID: {UQ, NotNull, INTEGER(10), FK to MEMBER}
-     * @param minNumber The min number of memberId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of memberId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of memberId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of memberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setMemberId_RangeOf(Integer minNumber, Integer maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -252,8 +252,8 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * (会員ID)MEMBER_ID: {UQ, NotNull, INTEGER(10), FK to MEMBER}
-     * @param minNumber The min number of memberId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of memberId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of memberId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of memberId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setMemberId_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
@@ -263,7 +263,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * (会員ID)MEMBER_ID: {UQ, NotNull, INTEGER(10), FK to MEMBER}
-     * @param memberIdList The collection of memberId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param memberIdList The collection of memberId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setMemberId_InScope(Collection<Integer> memberIdList) {
         doSetMemberId_InScope(memberIdList);
@@ -276,7 +276,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * (会員ID)MEMBER_ID: {UQ, NotNull, INTEGER(10), FK to MEMBER}
-     * @param memberIdList The collection of memberId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param memberIdList The collection of memberId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setMemberId_NotInScope(Collection<Integer> memberIdList) {
         doSetMemberId_NotInScope(memberIdList);
@@ -356,8 +356,8 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * (サービスポイント数)SERVICE_POINT_COUNT: {IX, NotNull, INTEGER(10)}
-     * @param minNumber The min number of servicePointCount. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of servicePointCount. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of servicePointCount. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of servicePointCount. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setServicePointCount_RangeOf(Integer minNumber, Integer maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -369,8 +369,8 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * (サービスポイント数)SERVICE_POINT_COUNT: {IX, NotNull, INTEGER(10)}
-     * @param minNumber The min number of servicePointCount. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of servicePointCount. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of servicePointCount. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of servicePointCount. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setServicePointCount_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
@@ -380,7 +380,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * (サービスポイント数)SERVICE_POINT_COUNT: {IX, NotNull, INTEGER(10)}
-     * @param servicePointCountList The collection of servicePointCount as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param servicePointCountList The collection of servicePointCount as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setServicePointCount_InScope(Collection<Integer> servicePointCountList) {
         doSetServicePointCount_InScope(servicePointCountList);
@@ -393,7 +393,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * (サービスポイント数)SERVICE_POINT_COUNT: {IX, NotNull, INTEGER(10)}
-     * @param servicePointCountList The collection of servicePointCount as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param servicePointCountList The collection of servicePointCount as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setServicePointCount_NotInScope(Collection<Integer> servicePointCountList) {
         doSetServicePointCount_NotInScope(servicePointCountList);
@@ -409,7 +409,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {NotNull, CHAR(3), FK to SERVICE_RANK}
-     * @param serviceRankCode The value of serviceRankCode as equal. (NullAllowed: if null (or empty), no condition)
+     * @param serviceRankCode The value of serviceRankCode as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setServiceRankCode_Equal(String serviceRankCode) {
         doSetServiceRankCode_Equal(fRES(serviceRankCode));
@@ -422,7 +422,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {NotNull, CHAR(3), FK to SERVICE_RANK}
-     * @param serviceRankCode The value of serviceRankCode as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param serviceRankCode The value of serviceRankCode as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setServiceRankCode_NotEqual(String serviceRankCode) {
         doSetServiceRankCode_NotEqual(fRES(serviceRankCode));
@@ -435,7 +435,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {NotNull, CHAR(3), FK to SERVICE_RANK}
-     * @param serviceRankCodeList The collection of serviceRankCode as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param serviceRankCodeList The collection of serviceRankCode as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setServiceRankCode_InScope(Collection<String> serviceRankCodeList) {
         doSetServiceRankCode_InScope(serviceRankCodeList);
@@ -448,7 +448,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {NotNull, CHAR(3), FK to SERVICE_RANK}
-     * @param serviceRankCodeList The collection of serviceRankCode as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param serviceRankCodeList The collection of serviceRankCode as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setServiceRankCode_NotInScope(Collection<String> serviceRankCodeList) {
         doSetServiceRankCode_NotInScope(serviceRankCodeList);
@@ -462,7 +462,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {NotNull, CHAR(3), FK to SERVICE_RANK} <br>
      * <pre>e.g. setServiceRankCode_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param serviceRankCode The value of serviceRankCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param serviceRankCode The value of serviceRankCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setServiceRankCode_LikeSearch(String serviceRankCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -473,7 +473,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {NotNull, CHAR(3), FK to SERVICE_RANK} <br>
      * <pre>e.g. setServiceRankCode_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param serviceRankCode The value of serviceRankCode as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param serviceRankCode The value of serviceRankCode as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setServiceRankCode_LikeSearch(String serviceRankCode, LikeSearchOption likeSearchOption) {
@@ -484,7 +484,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {NotNull, CHAR(3), FK to SERVICE_RANK}
-     * @param serviceRankCode The value of serviceRankCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param serviceRankCode The value of serviceRankCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setServiceRankCode_NotLikeSearch(String serviceRankCode, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -495,7 +495,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {NotNull, CHAR(3), FK to SERVICE_RANK}
-     * @param serviceRankCode The value of serviceRankCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param serviceRankCode The value of serviceRankCode as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setServiceRankCode_NotLikeSearch(String serviceRankCode, LikeSearchOption likeSearchOption) {
@@ -505,7 +505,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * (サービスランクコード)SERVICE_RANK_CODE: {NotNull, CHAR(3), FK to SERVICE_RANK}
-     * @param serviceRankCode The value of serviceRankCode as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param serviceRankCode The value of serviceRankCode as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setServiceRankCode_PrefixSearch(String serviceRankCode) {
         setServiceRankCode_LikeSearch(serviceRankCode, xcLSOPPre());
@@ -606,7 +606,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * REGISTER_USER: {NotNull, VARCHAR(200)}
-     * @param registerUser The value of registerUser as equal. (NullAllowed: if null (or empty), no condition)
+     * @param registerUser The value of registerUser as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRegisterUser_Equal(String registerUser) {
         doSetRegisterUser_Equal(fRES(registerUser));
@@ -619,7 +619,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * REGISTER_USER: {NotNull, VARCHAR(200)}
-     * @param registerUser The value of registerUser as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param registerUser The value of registerUser as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRegisterUser_NotEqual(String registerUser) {
         doSetRegisterUser_NotEqual(fRES(registerUser));
@@ -632,7 +632,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * REGISTER_USER: {NotNull, VARCHAR(200)}
-     * @param registerUserList The collection of registerUser as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param registerUserList The collection of registerUser as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRegisterUser_InScope(Collection<String> registerUserList) {
         doSetRegisterUser_InScope(registerUserList);
@@ -645,7 +645,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * REGISTER_USER: {NotNull, VARCHAR(200)}
-     * @param registerUserList The collection of registerUser as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param registerUserList The collection of registerUser as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRegisterUser_NotInScope(Collection<String> registerUserList) {
         doSetRegisterUser_NotInScope(registerUserList);
@@ -659,7 +659,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REGISTER_USER: {NotNull, VARCHAR(200)} <br>
      * <pre>e.g. setRegisterUser_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param registerUser The value of registerUser as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param registerUser The value of registerUser as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setRegisterUser_LikeSearch(String registerUser, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -670,7 +670,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REGISTER_USER: {NotNull, VARCHAR(200)} <br>
      * <pre>e.g. setRegisterUser_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param registerUser The value of registerUser as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param registerUser The value of registerUser as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setRegisterUser_LikeSearch(String registerUser, LikeSearchOption likeSearchOption) {
@@ -681,7 +681,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REGISTER_USER: {NotNull, VARCHAR(200)}
-     * @param registerUser The value of registerUser as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param registerUser The value of registerUser as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setRegisterUser_NotLikeSearch(String registerUser, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -692,7 +692,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REGISTER_USER: {NotNull, VARCHAR(200)}
-     * @param registerUser The value of registerUser as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param registerUser The value of registerUser as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setRegisterUser_NotLikeSearch(String registerUser, LikeSearchOption likeSearchOption) {
@@ -702,7 +702,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * REGISTER_USER: {NotNull, VARCHAR(200)}
-     * @param registerUser The value of registerUser as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param registerUser The value of registerUser as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setRegisterUser_PrefixSearch(String registerUser) {
         setRegisterUser_LikeSearch(registerUser, xcLSOPPre());
@@ -803,7 +803,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * UPDATE_USER: {NotNull, VARCHAR(200)}
-     * @param updateUser The value of updateUser as equal. (NullAllowed: if null (or empty), no condition)
+     * @param updateUser The value of updateUser as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setUpdateUser_Equal(String updateUser) {
         doSetUpdateUser_Equal(fRES(updateUser));
@@ -816,7 +816,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * UPDATE_USER: {NotNull, VARCHAR(200)}
-     * @param updateUser The value of updateUser as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param updateUser The value of updateUser as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setUpdateUser_NotEqual(String updateUser) {
         doSetUpdateUser_NotEqual(fRES(updateUser));
@@ -829,7 +829,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * UPDATE_USER: {NotNull, VARCHAR(200)}
-     * @param updateUserList The collection of updateUser as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param updateUserList The collection of updateUser as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setUpdateUser_InScope(Collection<String> updateUserList) {
         doSetUpdateUser_InScope(updateUserList);
@@ -842,7 +842,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * UPDATE_USER: {NotNull, VARCHAR(200)}
-     * @param updateUserList The collection of updateUser as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param updateUserList The collection of updateUser as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setUpdateUser_NotInScope(Collection<String> updateUserList) {
         doSetUpdateUser_NotInScope(updateUserList);
@@ -856,7 +856,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * UPDATE_USER: {NotNull, VARCHAR(200)} <br>
      * <pre>e.g. setUpdateUser_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param updateUser The value of updateUser as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param updateUser The value of updateUser as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setUpdateUser_LikeSearch(String updateUser, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -867,7 +867,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * UPDATE_USER: {NotNull, VARCHAR(200)} <br>
      * <pre>e.g. setUpdateUser_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param updateUser The value of updateUser as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param updateUser The value of updateUser as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setUpdateUser_LikeSearch(String updateUser, LikeSearchOption likeSearchOption) {
@@ -878,7 +878,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * UPDATE_USER: {NotNull, VARCHAR(200)}
-     * @param updateUser The value of updateUser as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param updateUser The value of updateUser as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setUpdateUser_NotLikeSearch(String updateUser, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -889,7 +889,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * UPDATE_USER: {NotNull, VARCHAR(200)}
-     * @param updateUser The value of updateUser as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param updateUser The value of updateUser as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setUpdateUser_NotLikeSearch(String updateUser, LikeSearchOption likeSearchOption) {
@@ -899,7 +899,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * UPDATE_USER: {NotNull, VARCHAR(200)}
-     * @param updateUser The value of updateUser as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param updateUser The value of updateUser as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setUpdateUser_PrefixSearch(String updateUser) {
         setUpdateUser_LikeSearch(updateUser, xcLSOPPre());
@@ -975,8 +975,8 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * VERSION_NO: {NotNull, BIGINT(19)}
-     * @param minNumber The min number of versionNo. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of versionNo. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of versionNo. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of versionNo. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setVersionNo_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -988,8 +988,8 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * VERSION_NO: {NotNull, BIGINT(19)}
-     * @param minNumber The min number of versionNo. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of versionNo. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of versionNo. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of versionNo. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setVersionNo_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -999,7 +999,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * VERSION_NO: {NotNull, BIGINT(19)}
-     * @param versionNoList The collection of versionNo as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param versionNoList The collection of versionNo as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVersionNo_InScope(Collection<Long> versionNoList) {
         doSetVersionNo_InScope(versionNoList);
@@ -1012,7 +1012,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * VERSION_NO: {NotNull, BIGINT(19)}
-     * @param versionNoList The collection of versionNo as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param versionNoList The collection of versionNo as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVersionNo_NotInScope(Collection<Long> versionNoList) {
         doSetVersionNo_NotInScope(versionNoList);
@@ -1036,7 +1036,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<MemberServiceCB> scalar_Equal() {
@@ -1051,7 +1051,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<MemberServiceCB> scalar_NotEqual() {
@@ -1066,7 +1066,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<MemberServiceCB> scalar_GreaterThan() {
@@ -1081,7 +1081,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<MemberServiceCB> scalar_LessThan() {
@@ -1096,7 +1096,7 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<MemberServiceCB> scalar_GreaterEqual() {
@@ -1199,7 +1199,6 @@ public abstract class AbstractBsMemberServiceCQ extends AbstractConditionQuery {
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);

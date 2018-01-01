@@ -97,7 +97,7 @@ public class ProcedureTest extends UnitContainerTestCase {
         //assertNull(pmb.getVvOutDecimal());
         pmb.setVvInoutInteger(1234);
         pmb.setVvOutBigint(2345L);
-        pmb.setVvvInDate(currentDate());
+        pmb.setVvvInDate(currentUtilDate());
         assertNull(pmb.getVvvOutTimestamp());
 
         // ## Act ##

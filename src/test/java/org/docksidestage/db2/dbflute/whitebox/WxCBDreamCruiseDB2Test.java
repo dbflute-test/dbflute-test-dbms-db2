@@ -86,8 +86,7 @@ public class WxCBDreamCruiseDB2Test extends UnitContainerTestCase {
             public void query(PurchaseCB subCB) {
                 subCB.query().queryProduct().notExistsPurchase(new SubQuery<PurchaseCB>() {
                     public void query(PurchaseCB subCB) {
-                        SpecifiedColumn pointColumn = dreamCruiseCB.specify().specifyMemberServiceAsOne()
-                                .columnServicePointCount();
+                        SpecifiedColumn pointColumn = dreamCruiseCB.specify().specifyMemberServiceAsOne().columnServicePointCount();
                         subCB.columnQuery(new SpecifyQuery<PurchaseCB>() {
                             public void specify(PurchaseCB cb) {
                                 cb.specify().columnMemberId();
@@ -215,31 +214,24 @@ public class WxCBDreamCruiseDB2Test extends UnitContainerTestCase {
         });
 
         // ## Act ##
-        try {
-            memberBhv.selectList(cb);
-            fail();
-        } catch (SQLFailureException e) {
-            log(e.getMessage());
-        }
+        ListResultBean<Member> memberList = memberBhv.selectList(cb);
 
         // ## Assert ##
         // using Date, why?
         // DB2 SQL Error: SQLCODE=-727, SQLSTATE=56098, SQLERRMC=2;-461;42846;SYSIBM.DATE|SYSIBM.TIMESTAMP, DRIVER=3.52.95
-        //assertHasAnyElement(memberList);
-        //for (Member member : memberList) {
-        //    Integer memberId = member.getMemberId();
-        //    log(memberId, member.getMemberName());
-        //    assertTrue(memberId >= 9);
-        //    if (memberId.equals(9)) {
-        //        markHere("exists");
-        //    }
-        //}
-        //assertMarked("exists");
+        assertHasAnyElement(memberList);
+        for (Member member : memberList) {
+            Integer memberId = member.getMemberId();
+            log(memberId, member.getMemberName());
+            assertTrue(memberId >= 9);
+            if (memberId.equals(9)) {
+                markHere("exists");
+            }
+        }
+        assertMarked("exists");
         String sql = cb.toDisplaySql();
+        assertContains(sql, "where dfloc.BIRTHDATE <= cast(cast('2015-04-05' as timestamp) + dfloc.VERSION_NO month as date)");
         assertContains(sql,
-                "where dfloc.BIRTHDATE <= cast(cast('2015-04-05' as timestamp) + dfloc.VERSION_NO month as date)");
-        assertContains(
-                sql,
                 "and dfloc.BIRTHDATE < cast(cast(cast(cast('2014-09-01' as timestamp) + dfloc.MEMBER_ID day as date) as timestamp) + 1 day as date)");
         assertContains(sql, "and dfloc.BIRTHDATE >= '2006-09-26'");
     }
@@ -292,10 +284,8 @@ public class WxCBDreamCruiseDB2Test extends UnitContainerTestCase {
             assertTrue(member.getMemberId() >= 10);
         }
         String sql = cb.toDisplaySql();
+        assertContains(sql, "where dfloc.FORMALIZED_DATETIME <= cast('2015-04-05 12:34:56.000' as timestamp) + dfloc.VERSION_NO month");
         assertContains(sql,
-                "where dfloc.FORMALIZED_DATETIME <= cast('2015-04-05 12:34:56.000' as timestamp) + dfloc.VERSION_NO month");
-        assertContains(
-                sql,
                 "and dfloc.FORMALIZED_DATETIME <= cast(cast('2014-09-01 15:00:00.000' as timestamp) + dfloc.MEMBER_ID day as timestamp) + -3 hour");
         assertContains(sql, "and dfloc.FORMALIZED_DATETIME >= '2006-09-26 12:34:56.789'");
     }
@@ -354,10 +344,8 @@ public class WxCBDreamCruiseDB2Test extends UnitContainerTestCase {
         }
         assertMarked("exists");
         String sql = cb.toDisplaySql();
+        assertContains(sql, "where dfloc.FORMALIZED_DATETIME >= cast('2006-09-26 00:00:00.000' as timestamp) - dfloc.VERSION_NO month");
         assertContains(sql,
-                "where dfloc.FORMALIZED_DATETIME >= cast('2006-09-26 00:00:00.000' as timestamp) - dfloc.VERSION_NO month");
-        assertContains(
-                sql,
                 "and dfloc.FORMALIZED_DATETIME <= cast(cast('2014-09-20 00:00:00.000' as timestamp) - dfloc.MEMBER_ID day as timestamp) + -1 minute");
         assertContains(sql, "and dfloc.FORMALIZED_DATETIME <= '2015-04-05 00:00:00.000'");
     }

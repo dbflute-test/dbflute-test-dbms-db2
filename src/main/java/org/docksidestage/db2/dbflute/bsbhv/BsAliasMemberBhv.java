@@ -1292,8 +1292,8 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * aliasMemberBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * aliasMemberBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * aliasMemberBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * aliasMemberBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * aliasMemberBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -1301,7 +1301,7 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
      * aliasMemberBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * aliasMemberBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * aliasMemberBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * aliasMemberBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * aliasMemberBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1309,7 +1309,7 @@ public abstract class BsAliasMemberBhv extends AbstractBehaviorWritable<AliasMem
      * aliasMemberBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * aliasMemberBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * aliasMemberBhv.outideSql().removeBlockComment().selectList()
      * aliasMemberBhv.outideSql().removeLineComment().selectList()
      * aliasMemberBhv.outideSql().formatSql().selectList()

@@ -988,8 +988,8 @@ public abstract class BsSummaryMemberPurchaseBhv extends AbstractBehaviorWritabl
     /**
      * Prepare the all facade executor of outside-SQL to execute it.
      * <pre>
-     * <span style="color: #3F7E5E">// main style</span> 
-     * summaryMemberPurchaseBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span> 
+     * <span style="color: #3F7E5E">// main style</span>
+     * summaryMemberPurchaseBhv.outideSql().selectEntity(pmb); <span style="color: #3F7E5E">// optional</span>
      * summaryMemberPurchaseBhv.outideSql().selectList(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
      * summaryMemberPurchaseBhv.outideSql().selectPage(pmb); <span style="color: #3F7E5E">// PagingResultBean</span>
      * summaryMemberPurchaseBhv.outideSql().selectPagedListOnly(pmb); <span style="color: #3F7E5E">// ListResultBean</span>
@@ -997,7 +997,7 @@ public abstract class BsSummaryMemberPurchaseBhv extends AbstractBehaviorWritabl
      * summaryMemberPurchaseBhv.outideSql().execute(pmb); <span style="color: #3F7E5E">// int (updated count)</span>
      * summaryMemberPurchaseBhv.outideSql().call(pmb); <span style="color: #3F7E5E">// void (pmb has OUT parameters)</span>
      *
-     * <span style="color: #3F7E5E">// traditional style</span> 
+     * <span style="color: #3F7E5E">// traditional style</span>
      * summaryMemberPurchaseBhv.outideSql().traditionalStyle().selectEntity(path, pmb, entityType);
      * summaryMemberPurchaseBhv.outideSql().traditionalStyle().selectList(path, pmb, entityType);
      * summaryMemberPurchaseBhv.outideSql().traditionalStyle().selectPage(path, pmb, entityType);
@@ -1005,7 +1005,7 @@ public abstract class BsSummaryMemberPurchaseBhv extends AbstractBehaviorWritabl
      * summaryMemberPurchaseBhv.outideSql().traditionalStyle().selectCursor(path, pmb, handler);
      * summaryMemberPurchaseBhv.outideSql().traditionalStyle().execute(path, pmb);
      *
-     * <span style="color: #3F7E5E">// options</span> 
+     * <span style="color: #3F7E5E">// options</span>
      * summaryMemberPurchaseBhv.outideSql().removeBlockComment().selectList()
      * summaryMemberPurchaseBhv.outideSql().removeLineComment().selectList()
      * summaryMemberPurchaseBhv.outideSql().formatSql().selectList()

@@ -135,7 +135,7 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
     public Map<String, Object> xdfgetMemberStatusCode_QueryDerivedReferrer_MemberLoginListParameter() { return xgetSQuePmMap("memberStatusCode_QueryDerivedReferrer_MemberLoginList"); }
     public String keepMemberStatusCode_QueryDerivedReferrer_MemberLoginListParameter(Object pm) { return xkeepSQuePm("memberStatusCode_QueryDerivedReferrer_MemberLoginList", pm); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (会員ステータスコード)MEMBER_STATUS_CODE: {PK, NotNull, CHAR(3), classification=MemberStatus}
      * @return this. (NotNull)
@@ -155,7 +155,7 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
       return _memberStatusName; }
     protected ConditionValue xgetCValueMemberStatusName() { return xdfgetMemberStatusName(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (会員ステータス名称)MEMBER_STATUS_NAME: {NotNull, VARCHAR(50)}
      * @return this. (NotNull)
@@ -175,7 +175,7 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
       return _description; }
     protected ConditionValue xgetCValueDescription() { return xdfgetDescription(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (説明)DESCRIPTION: {NotNull, VARCHAR(200)}
      * @return this. (NotNull)
@@ -195,7 +195,7 @@ public class BsMemberStatusCQ extends AbstractBsMemberStatusCQ {
       return _displayOrder; }
     protected ConditionValue xgetCValueDisplayOrder() { return xdfgetDisplayOrder(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * (表示順)DISPLAY_ORDER: {UQ, NotNull, INTEGER(10)}
      * @return this. (NotNull)

@@ -79,7 +79,7 @@ public class BsAliasRefExceptCQ extends AbstractBsAliasRefExceptCQ {
       return _refExceptId; }
     protected ConditionValue xgetCValueRefExceptId() { return xdfgetRefExceptId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * REF_EXCEPT_ID: {PK, NotNull, DECIMAL(16)}
      * @return this. (NotNull)
@@ -99,7 +99,7 @@ public class BsAliasRefExceptCQ extends AbstractBsAliasRefExceptCQ {
       return _exceptId; }
     protected ConditionValue xgetCValueExceptId() { return xdfgetExceptId(); }
 
-    /** 
+    /**
      * Add order-by as ascend. <br>
      * EXCEPT_ID: {NotNull, DECIMAL(16), FK to ALIAS_EXCEPT}
      * @return this. (NotNull)

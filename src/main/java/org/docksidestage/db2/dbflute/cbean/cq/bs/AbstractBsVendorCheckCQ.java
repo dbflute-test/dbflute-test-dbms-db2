@@ -110,8 +110,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_CHECK_ID: {PK, NotNull, DECIMAL(16)}
-     * @param minNumber The min number of vendorCheckId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of vendorCheckId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of vendorCheckId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of vendorCheckId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setVendorCheckId_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -123,8 +123,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * VENDOR_CHECK_ID: {PK, NotNull, DECIMAL(16)}
-     * @param minNumber The min number of vendorCheckId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of vendorCheckId. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of vendorCheckId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of vendorCheckId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setVendorCheckId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -134,7 +134,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * VENDOR_CHECK_ID: {PK, NotNull, DECIMAL(16)}
-     * @param vendorCheckIdList The collection of vendorCheckId as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param vendorCheckIdList The collection of vendorCheckId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVendorCheckId_InScope(Collection<Long> vendorCheckIdList) {
         doSetVendorCheckId_InScope(vendorCheckIdList);
@@ -147,7 +147,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * VENDOR_CHECK_ID: {PK, NotNull, DECIMAL(16)}
-     * @param vendorCheckIdList The collection of vendorCheckId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param vendorCheckIdList The collection of vendorCheckId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setVendorCheckId_NotInScope(Collection<Long> vendorCheckIdList) {
         doSetVendorCheckId_NotInScope(vendorCheckIdList);
@@ -175,7 +175,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_CHAR: {CHAR(3)}
-     * @param typeOfChar The value of typeOfChar as equal. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfChar The value of typeOfChar as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfChar_Equal(String typeOfChar) {
         doSetTypeOfChar_Equal(fRES(typeOfChar));
@@ -188,7 +188,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_CHAR: {CHAR(3)}
-     * @param typeOfChar The value of typeOfChar as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfChar The value of typeOfChar as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfChar_NotEqual(String typeOfChar) {
         doSetTypeOfChar_NotEqual(fRES(typeOfChar));
@@ -201,7 +201,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_CHAR: {CHAR(3)}
-     * @param typeOfCharList The collection of typeOfChar as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfCharList The collection of typeOfChar as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfChar_InScope(Collection<String> typeOfCharList) {
         doSetTypeOfChar_InScope(typeOfCharList);
@@ -214,7 +214,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_CHAR: {CHAR(3)}
-     * @param typeOfCharList The collection of typeOfChar as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfCharList The collection of typeOfChar as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfChar_NotInScope(Collection<String> typeOfCharList) {
         doSetTypeOfChar_NotInScope(typeOfCharList);
@@ -228,7 +228,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_CHAR: {CHAR(3)} <br>
      * <pre>e.g. setTypeOfChar_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param typeOfChar The value of typeOfChar as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfChar The value of typeOfChar as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfChar_LikeSearch(String typeOfChar, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -239,7 +239,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_CHAR: {CHAR(3)} <br>
      * <pre>e.g. setTypeOfChar_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param typeOfChar The value of typeOfChar as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfChar The value of typeOfChar as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setTypeOfChar_LikeSearch(String typeOfChar, LikeSearchOption likeSearchOption) {
@@ -250,7 +250,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_CHAR: {CHAR(3)}
-     * @param typeOfChar The value of typeOfChar as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfChar The value of typeOfChar as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfChar_NotLikeSearch(String typeOfChar, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -261,7 +261,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_CHAR: {CHAR(3)}
-     * @param typeOfChar The value of typeOfChar as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfChar The value of typeOfChar as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setTypeOfChar_NotLikeSearch(String typeOfChar, LikeSearchOption likeSearchOption) {
@@ -271,7 +271,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_CHAR: {CHAR(3)}
-     * @param typeOfChar The value of typeOfChar as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfChar The value of typeOfChar as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfChar_PrefixSearch(String typeOfChar) {
         setTypeOfChar_LikeSearch(typeOfChar, xcLSOPPre());
@@ -317,7 +317,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_VARCHAR: {VARCHAR(32)}
-     * @param typeOfVarchar The value of typeOfVarchar as equal. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVarchar The value of typeOfVarchar as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfVarchar_Equal(String typeOfVarchar) {
         doSetTypeOfVarchar_Equal(fRES(typeOfVarchar));
@@ -330,7 +330,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_VARCHAR: {VARCHAR(32)}
-     * @param typeOfVarchar The value of typeOfVarchar as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVarchar The value of typeOfVarchar as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfVarchar_NotEqual(String typeOfVarchar) {
         doSetTypeOfVarchar_NotEqual(fRES(typeOfVarchar));
@@ -343,7 +343,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARCHAR: {VARCHAR(32)}
-     * @param typeOfVarcharList The collection of typeOfVarchar as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVarcharList The collection of typeOfVarchar as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfVarchar_InScope(Collection<String> typeOfVarcharList) {
         doSetTypeOfVarchar_InScope(typeOfVarcharList);
@@ -356,7 +356,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARCHAR: {VARCHAR(32)}
-     * @param typeOfVarcharList The collection of typeOfVarchar as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVarcharList The collection of typeOfVarchar as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfVarchar_NotInScope(Collection<String> typeOfVarcharList) {
         doSetTypeOfVarchar_NotInScope(typeOfVarcharList);
@@ -370,7 +370,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARCHAR: {VARCHAR(32)} <br>
      * <pre>e.g. setTypeOfVarchar_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param typeOfVarchar The value of typeOfVarchar as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVarchar The value of typeOfVarchar as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfVarchar_LikeSearch(String typeOfVarchar, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -381,7 +381,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARCHAR: {VARCHAR(32)} <br>
      * <pre>e.g. setTypeOfVarchar_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param typeOfVarchar The value of typeOfVarchar as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVarchar The value of typeOfVarchar as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setTypeOfVarchar_LikeSearch(String typeOfVarchar, LikeSearchOption likeSearchOption) {
@@ -392,7 +392,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARCHAR: {VARCHAR(32)}
-     * @param typeOfVarchar The value of typeOfVarchar as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVarchar The value of typeOfVarchar as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfVarchar_NotLikeSearch(String typeOfVarchar, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -403,7 +403,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARCHAR: {VARCHAR(32)}
-     * @param typeOfVarchar The value of typeOfVarchar as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVarchar The value of typeOfVarchar as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setTypeOfVarchar_NotLikeSearch(String typeOfVarchar, LikeSearchOption likeSearchOption) {
@@ -413,7 +413,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARCHAR: {VARCHAR(32)}
-     * @param typeOfVarchar The value of typeOfVarchar as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVarchar The value of typeOfVarchar as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfVarchar_PrefixSearch(String typeOfVarchar) {
         setTypeOfVarchar_LikeSearch(typeOfVarchar, xcLSOPPre());
@@ -459,7 +459,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_CLOB: {CLOB(1048576)}
-     * @param typeOfClob The value of typeOfClob as equal. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfClob The value of typeOfClob as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfClob_Equal(String typeOfClob) {
         doSetTypeOfClob_Equal(fRES(typeOfClob));
@@ -472,7 +472,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_CLOB: {CLOB(1048576)}
-     * @param typeOfClob The value of typeOfClob as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfClob The value of typeOfClob as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfClob_NotEqual(String typeOfClob) {
         doSetTypeOfClob_NotEqual(fRES(typeOfClob));
@@ -485,7 +485,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_CLOB: {CLOB(1048576)}
-     * @param typeOfClobList The collection of typeOfClob as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfClobList The collection of typeOfClob as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfClob_InScope(Collection<String> typeOfClobList) {
         doSetTypeOfClob_InScope(typeOfClobList);
@@ -498,7 +498,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_CLOB: {CLOB(1048576)}
-     * @param typeOfClobList The collection of typeOfClob as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfClobList The collection of typeOfClob as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfClob_NotInScope(Collection<String> typeOfClobList) {
         doSetTypeOfClob_NotInScope(typeOfClobList);
@@ -512,7 +512,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_CLOB: {CLOB(1048576)} <br>
      * <pre>e.g. setTypeOfClob_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param typeOfClob The value of typeOfClob as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfClob The value of typeOfClob as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfClob_LikeSearch(String typeOfClob, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -523,7 +523,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_CLOB: {CLOB(1048576)} <br>
      * <pre>e.g. setTypeOfClob_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param typeOfClob The value of typeOfClob as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfClob The value of typeOfClob as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setTypeOfClob_LikeSearch(String typeOfClob, LikeSearchOption likeSearchOption) {
@@ -534,7 +534,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_CLOB: {CLOB(1048576)}
-     * @param typeOfClob The value of typeOfClob as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfClob The value of typeOfClob as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfClob_NotLikeSearch(String typeOfClob, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -545,7 +545,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_CLOB: {CLOB(1048576)}
-     * @param typeOfClob The value of typeOfClob as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfClob The value of typeOfClob as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setTypeOfClob_NotLikeSearch(String typeOfClob, LikeSearchOption likeSearchOption) {
@@ -555,7 +555,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_CLOB: {CLOB(1048576)}
-     * @param typeOfClob The value of typeOfClob as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfClob The value of typeOfClob as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfClob_PrefixSearch(String typeOfClob) {
         setTypeOfClob_LikeSearch(typeOfClob, xcLSOPPre());
@@ -579,7 +579,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DBCLOB: {DBCLOB(2097152)}
-     * @param typeOfDbclob The value of typeOfDbclob as equal. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDbclob The value of typeOfDbclob as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDbclob_Equal(String typeOfDbclob) {
         doSetTypeOfDbclob_Equal(fRES(typeOfDbclob));
@@ -592,7 +592,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DBCLOB: {DBCLOB(2097152)}
-     * @param typeOfDbclob The value of typeOfDbclob as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDbclob The value of typeOfDbclob as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDbclob_NotEqual(String typeOfDbclob) {
         doSetTypeOfDbclob_NotEqual(fRES(typeOfDbclob));
@@ -605,7 +605,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_DBCLOB: {DBCLOB(2097152)}
-     * @param typeOfDbclobList The collection of typeOfDbclob as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDbclobList The collection of typeOfDbclob as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDbclob_InScope(Collection<String> typeOfDbclobList) {
         doSetTypeOfDbclob_InScope(typeOfDbclobList);
@@ -618,7 +618,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_DBCLOB: {DBCLOB(2097152)}
-     * @param typeOfDbclobList The collection of typeOfDbclob as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDbclobList The collection of typeOfDbclob as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDbclob_NotInScope(Collection<String> typeOfDbclobList) {
         doSetTypeOfDbclob_NotInScope(typeOfDbclobList);
@@ -632,7 +632,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_DBCLOB: {DBCLOB(2097152)} <br>
      * <pre>e.g. setTypeOfDbclob_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param typeOfDbclob The value of typeOfDbclob as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDbclob The value of typeOfDbclob as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfDbclob_LikeSearch(String typeOfDbclob, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -643,7 +643,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_DBCLOB: {DBCLOB(2097152)} <br>
      * <pre>e.g. setTypeOfDbclob_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param typeOfDbclob The value of typeOfDbclob as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDbclob The value of typeOfDbclob as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setTypeOfDbclob_LikeSearch(String typeOfDbclob, LikeSearchOption likeSearchOption) {
@@ -654,7 +654,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_DBCLOB: {DBCLOB(2097152)}
-     * @param typeOfDbclob The value of typeOfDbclob as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDbclob The value of typeOfDbclob as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfDbclob_NotLikeSearch(String typeOfDbclob, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -665,7 +665,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_DBCLOB: {DBCLOB(2097152)}
-     * @param typeOfDbclob The value of typeOfDbclob as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDbclob The value of typeOfDbclob as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setTypeOfDbclob_NotLikeSearch(String typeOfDbclob, LikeSearchOption likeSearchOption) {
@@ -675,7 +675,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_DBCLOB: {DBCLOB(2097152)}
-     * @param typeOfDbclob The value of typeOfDbclob as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDbclob The value of typeOfDbclob as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDbclob_PrefixSearch(String typeOfDbclob) {
         setTypeOfDbclob_LikeSearch(typeOfDbclob, xcLSOPPre());
@@ -763,8 +763,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_DECIMAL: {DECIMAL(5, 3)}
-     * @param minNumber The min number of typeOfDecimalDecimal. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfDecimalDecimal. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfDecimalDecimal. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfDecimalDecimal. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTypeOfDecimalDecimal_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -776,8 +776,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_DECIMAL: {DECIMAL(5, 3)}
-     * @param minNumber The min number of typeOfDecimalDecimal. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfDecimalDecimal. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfDecimalDecimal. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfDecimalDecimal. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTypeOfDecimalDecimal_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, RangeOfOption rangeOfOption) {
@@ -787,7 +787,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_DECIMAL_DECIMAL: {DECIMAL(5, 3)}
-     * @param typeOfDecimalDecimalList The collection of typeOfDecimalDecimal as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDecimalDecimalList The collection of typeOfDecimalDecimal as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDecimalDecimal_InScope(Collection<java.math.BigDecimal> typeOfDecimalDecimalList) {
         doSetTypeOfDecimalDecimal_InScope(typeOfDecimalDecimalList);
@@ -800,7 +800,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_DECIMAL_DECIMAL: {DECIMAL(5, 3)}
-     * @param typeOfDecimalDecimalList The collection of typeOfDecimalDecimal as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDecimalDecimalList The collection of typeOfDecimalDecimal as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDecimalDecimal_NotInScope(Collection<java.math.BigDecimal> typeOfDecimalDecimalList) {
         doSetTypeOfDecimalDecimal_NotInScope(typeOfDecimalDecimalList);
@@ -892,8 +892,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_INTEGER: {DECIMAL(5)}
-     * @param minNumber The min number of typeOfDecimalInteger. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfDecimalInteger. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfDecimalInteger. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfDecimalInteger. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTypeOfDecimalInteger_RangeOf(Integer minNumber, Integer maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -905,8 +905,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_INTEGER: {DECIMAL(5)}
-     * @param minNumber The min number of typeOfDecimalInteger. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfDecimalInteger. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfDecimalInteger. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfDecimalInteger. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTypeOfDecimalInteger_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
@@ -916,7 +916,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_DECIMAL_INTEGER: {DECIMAL(5)}
-     * @param typeOfDecimalIntegerList The collection of typeOfDecimalInteger as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDecimalIntegerList The collection of typeOfDecimalInteger as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDecimalInteger_InScope(Collection<Integer> typeOfDecimalIntegerList) {
         doSetTypeOfDecimalInteger_InScope(typeOfDecimalIntegerList);
@@ -929,7 +929,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_DECIMAL_INTEGER: {DECIMAL(5)}
-     * @param typeOfDecimalIntegerList The collection of typeOfDecimalInteger as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDecimalIntegerList The collection of typeOfDecimalInteger as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDecimalInteger_NotInScope(Collection<Integer> typeOfDecimalIntegerList) {
         doSetTypeOfDecimalInteger_NotInScope(typeOfDecimalIntegerList);
@@ -1021,8 +1021,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_BIGINT: {DECIMAL(12)}
-     * @param minNumber The min number of typeOfDecimalBigint. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfDecimalBigint. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfDecimalBigint. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfDecimalBigint. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTypeOfDecimalBigint_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -1034,8 +1034,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DECIMAL_BIGINT: {DECIMAL(12)}
-     * @param minNumber The min number of typeOfDecimalBigint. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfDecimalBigint. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfDecimalBigint. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfDecimalBigint. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTypeOfDecimalBigint_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -1045,7 +1045,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_DECIMAL_BIGINT: {DECIMAL(12)}
-     * @param typeOfDecimalBigintList The collection of typeOfDecimalBigint as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDecimalBigintList The collection of typeOfDecimalBigint as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDecimalBigint_InScope(Collection<Long> typeOfDecimalBigintList) {
         doSetTypeOfDecimalBigint_InScope(typeOfDecimalBigintList);
@@ -1058,7 +1058,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_DECIMAL_BIGINT: {DECIMAL(12)}
-     * @param typeOfDecimalBigintList The collection of typeOfDecimalBigint as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDecimalBigintList The collection of typeOfDecimalBigint as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDecimalBigint_NotInScope(Collection<Long> typeOfDecimalBigintList) {
         doSetTypeOfDecimalBigint_NotInScope(typeOfDecimalBigintList);
@@ -1150,8 +1150,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_SMALLINT: {SMALLINT(5)}
-     * @param minNumber The min number of typeOfSmallint. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfSmallint. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfSmallint. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfSmallint. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTypeOfSmallint_RangeOf(Integer minNumber, Integer maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -1163,8 +1163,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_SMALLINT: {SMALLINT(5)}
-     * @param minNumber The min number of typeOfSmallint. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfSmallint. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfSmallint. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfSmallint. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTypeOfSmallint_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
@@ -1174,7 +1174,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_SMALLINT: {SMALLINT(5)}
-     * @param typeOfSmallintList The collection of typeOfSmallint as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfSmallintList The collection of typeOfSmallint as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfSmallint_InScope(Collection<Integer> typeOfSmallintList) {
         doSetTypeOfSmallint_InScope(typeOfSmallintList);
@@ -1187,7 +1187,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_SMALLINT: {SMALLINT(5)}
-     * @param typeOfSmallintList The collection of typeOfSmallint as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfSmallintList The collection of typeOfSmallint as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfSmallint_NotInScope(Collection<Integer> typeOfSmallintList) {
         doSetTypeOfSmallint_NotInScope(typeOfSmallintList);
@@ -1279,8 +1279,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_INTEGER: {INTEGER(10)}
-     * @param minNumber The min number of typeOfInteger. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfInteger. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfInteger. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfInteger. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTypeOfInteger_RangeOf(Integer minNumber, Integer maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -1292,8 +1292,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_INTEGER: {INTEGER(10)}
-     * @param minNumber The min number of typeOfInteger. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfInteger. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfInteger. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfInteger. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTypeOfInteger_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
@@ -1303,7 +1303,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_INTEGER: {INTEGER(10)}
-     * @param typeOfIntegerList The collection of typeOfInteger as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfIntegerList The collection of typeOfInteger as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfInteger_InScope(Collection<Integer> typeOfIntegerList) {
         doSetTypeOfInteger_InScope(typeOfIntegerList);
@@ -1316,7 +1316,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_INTEGER: {INTEGER(10)}
-     * @param typeOfIntegerList The collection of typeOfInteger as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfIntegerList The collection of typeOfInteger as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfInteger_NotInScope(Collection<Integer> typeOfIntegerList) {
         doSetTypeOfInteger_NotInScope(typeOfIntegerList);
@@ -1408,8 +1408,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_BIGINT: {BIGINT(19)}
-     * @param minNumber The min number of typeOfBigint. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfBigint. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfBigint. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfBigint. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTypeOfBigint_RangeOf(Long minNumber, Long maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -1421,8 +1421,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_BIGINT: {BIGINT(19)}
-     * @param minNumber The min number of typeOfBigint. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfBigint. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfBigint. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfBigint. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTypeOfBigint_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
@@ -1432,7 +1432,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_BIGINT: {BIGINT(19)}
-     * @param typeOfBigintList The collection of typeOfBigint as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfBigintList The collection of typeOfBigint as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfBigint_InScope(Collection<Long> typeOfBigintList) {
         doSetTypeOfBigint_InScope(typeOfBigintList);
@@ -1445,7 +1445,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_BIGINT: {BIGINT(19)}
-     * @param typeOfBigintList The collection of typeOfBigint as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfBigintList The collection of typeOfBigint as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfBigint_NotInScope(Collection<Long> typeOfBigintList) {
         doSetTypeOfBigint_NotInScope(typeOfBigintList);
@@ -1537,8 +1537,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_FLOAT: {DOUBLE(53)}
-     * @param minNumber The min number of typeOfFloat. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfFloat. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfFloat. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfFloat. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTypeOfFloat_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -1550,8 +1550,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_FLOAT: {DOUBLE(53)}
-     * @param minNumber The min number of typeOfFloat. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfFloat. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfFloat. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfFloat. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTypeOfFloat_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, RangeOfOption rangeOfOption) {
@@ -1561,7 +1561,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_FLOAT: {DOUBLE(53)}
-     * @param typeOfFloatList The collection of typeOfFloat as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfFloatList The collection of typeOfFloat as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfFloat_InScope(Collection<java.math.BigDecimal> typeOfFloatList) {
         doSetTypeOfFloat_InScope(typeOfFloatList);
@@ -1574,7 +1574,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_FLOAT: {DOUBLE(53)}
-     * @param typeOfFloatList The collection of typeOfFloat as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfFloatList The collection of typeOfFloat as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfFloat_NotInScope(Collection<java.math.BigDecimal> typeOfFloatList) {
         doSetTypeOfFloat_NotInScope(typeOfFloatList);
@@ -1666,8 +1666,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DOUBLE: {DOUBLE(53)}
-     * @param minNumber The min number of typeOfDouble. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfDouble. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfDouble. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfDouble. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTypeOfDouble_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -1679,8 +1679,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_DOUBLE: {DOUBLE(53)}
-     * @param minNumber The min number of typeOfDouble. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfDouble. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfDouble. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfDouble. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTypeOfDouble_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, RangeOfOption rangeOfOption) {
@@ -1690,7 +1690,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_DOUBLE: {DOUBLE(53)}
-     * @param typeOfDoubleList The collection of typeOfDouble as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDoubleList The collection of typeOfDouble as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDouble_InScope(Collection<java.math.BigDecimal> typeOfDoubleList) {
         doSetTypeOfDouble_InScope(typeOfDoubleList);
@@ -1703,7 +1703,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_DOUBLE: {DOUBLE(53)}
-     * @param typeOfDoubleList The collection of typeOfDouble as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfDoubleList The collection of typeOfDouble as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfDouble_NotInScope(Collection<java.math.BigDecimal> typeOfDoubleList) {
         doSetTypeOfDouble_NotInScope(typeOfDoubleList);
@@ -1795,8 +1795,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_REAL: {REAL(24)}
-     * @param minNumber The min number of typeOfReal. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfReal. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfReal. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfReal. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
      */
     public void setTypeOfReal_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, ConditionOptionCall<RangeOfOption> opLambda) {
@@ -1808,8 +1808,8 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_REAL: {REAL(24)}
-     * @param minNumber The min number of typeOfReal. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of typeOfReal. (NullAllowed: if null, no to-condition)
+     * @param minNumber The min number of typeOfReal. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of typeOfReal. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
     public void setTypeOfReal_RangeOf(java.math.BigDecimal minNumber, java.math.BigDecimal maxNumber, RangeOfOption rangeOfOption) {
@@ -1819,7 +1819,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_REAL: {REAL(24)}
-     * @param typeOfRealList The collection of typeOfReal as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfRealList The collection of typeOfReal as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfReal_InScope(Collection<java.math.BigDecimal> typeOfRealList) {
         doSetTypeOfReal_InScope(typeOfRealList);
@@ -1832,7 +1832,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_REAL: {REAL(24)}
-     * @param typeOfRealList The collection of typeOfReal as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfRealList The collection of typeOfReal as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfReal_NotInScope(Collection<java.math.BigDecimal> typeOfRealList) {
         doSetTypeOfReal_NotInScope(typeOfRealList);
@@ -2138,7 +2138,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_GRAPHIC: {GRAPHIC(2)}
-     * @param typeOfGraphic The value of typeOfGraphic as equal. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfGraphic The value of typeOfGraphic as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfGraphic_Equal(String typeOfGraphic) {
         doSetTypeOfGraphic_Equal(fRES(typeOfGraphic));
@@ -2151,7 +2151,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_GRAPHIC: {GRAPHIC(2)}
-     * @param typeOfGraphic The value of typeOfGraphic as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfGraphic The value of typeOfGraphic as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfGraphic_NotEqual(String typeOfGraphic) {
         doSetTypeOfGraphic_NotEqual(fRES(typeOfGraphic));
@@ -2164,7 +2164,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_GRAPHIC: {GRAPHIC(2)}
-     * @param typeOfGraphicList The collection of typeOfGraphic as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfGraphicList The collection of typeOfGraphic as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfGraphic_InScope(Collection<String> typeOfGraphicList) {
         doSetTypeOfGraphic_InScope(typeOfGraphicList);
@@ -2177,7 +2177,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_GRAPHIC: {GRAPHIC(2)}
-     * @param typeOfGraphicList The collection of typeOfGraphic as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfGraphicList The collection of typeOfGraphic as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfGraphic_NotInScope(Collection<String> typeOfGraphicList) {
         doSetTypeOfGraphic_NotInScope(typeOfGraphicList);
@@ -2191,7 +2191,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_GRAPHIC: {GRAPHIC(2)} <br>
      * <pre>e.g. setTypeOfGraphic_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param typeOfGraphic The value of typeOfGraphic as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfGraphic The value of typeOfGraphic as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfGraphic_LikeSearch(String typeOfGraphic, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -2202,7 +2202,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_GRAPHIC: {GRAPHIC(2)} <br>
      * <pre>e.g. setTypeOfGraphic_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param typeOfGraphic The value of typeOfGraphic as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfGraphic The value of typeOfGraphic as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setTypeOfGraphic_LikeSearch(String typeOfGraphic, LikeSearchOption likeSearchOption) {
@@ -2213,7 +2213,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_GRAPHIC: {GRAPHIC(2)}
-     * @param typeOfGraphic The value of typeOfGraphic as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfGraphic The value of typeOfGraphic as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfGraphic_NotLikeSearch(String typeOfGraphic, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -2224,7 +2224,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_GRAPHIC: {GRAPHIC(2)}
-     * @param typeOfGraphic The value of typeOfGraphic as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfGraphic The value of typeOfGraphic as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setTypeOfGraphic_NotLikeSearch(String typeOfGraphic, LikeSearchOption likeSearchOption) {
@@ -2234,7 +2234,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_GRAPHIC: {GRAPHIC(2)}
-     * @param typeOfGraphic The value of typeOfGraphic as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfGraphic The value of typeOfGraphic as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfGraphic_PrefixSearch(String typeOfGraphic) {
         setTypeOfGraphic_LikeSearch(typeOfGraphic, xcLSOPPre());
@@ -2264,7 +2264,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_VARGRAPHIC: {VARGRAPHIC(64)}
-     * @param typeOfVargraphic The value of typeOfVargraphic as equal. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVargraphic The value of typeOfVargraphic as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfVargraphic_Equal(String typeOfVargraphic) {
         doSetTypeOfVargraphic_Equal(fRES(typeOfVargraphic));
@@ -2277,7 +2277,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_VARGRAPHIC: {VARGRAPHIC(64)}
-     * @param typeOfVargraphic The value of typeOfVargraphic as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVargraphic The value of typeOfVargraphic as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfVargraphic_NotEqual(String typeOfVargraphic) {
         doSetTypeOfVargraphic_NotEqual(fRES(typeOfVargraphic));
@@ -2290,7 +2290,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARGRAPHIC: {VARGRAPHIC(64)}
-     * @param typeOfVargraphicList The collection of typeOfVargraphic as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVargraphicList The collection of typeOfVargraphic as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfVargraphic_InScope(Collection<String> typeOfVargraphicList) {
         doSetTypeOfVargraphic_InScope(typeOfVargraphicList);
@@ -2303,7 +2303,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARGRAPHIC: {VARGRAPHIC(64)}
-     * @param typeOfVargraphicList The collection of typeOfVargraphic as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVargraphicList The collection of typeOfVargraphic as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfVargraphic_NotInScope(Collection<String> typeOfVargraphicList) {
         doSetTypeOfVargraphic_NotInScope(typeOfVargraphicList);
@@ -2317,7 +2317,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARGRAPHIC: {VARGRAPHIC(64)} <br>
      * <pre>e.g. setTypeOfVargraphic_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param typeOfVargraphic The value of typeOfVargraphic as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVargraphic The value of typeOfVargraphic as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfVargraphic_LikeSearch(String typeOfVargraphic, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -2328,7 +2328,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARGRAPHIC: {VARGRAPHIC(64)} <br>
      * <pre>e.g. setTypeOfVargraphic_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param typeOfVargraphic The value of typeOfVargraphic as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVargraphic The value of typeOfVargraphic as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setTypeOfVargraphic_LikeSearch(String typeOfVargraphic, LikeSearchOption likeSearchOption) {
@@ -2339,7 +2339,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARGRAPHIC: {VARGRAPHIC(64)}
-     * @param typeOfVargraphic The value of typeOfVargraphic as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVargraphic The value of typeOfVargraphic as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfVargraphic_NotLikeSearch(String typeOfVargraphic, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -2350,7 +2350,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARGRAPHIC: {VARGRAPHIC(64)}
-     * @param typeOfVargraphic The value of typeOfVargraphic as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVargraphic The value of typeOfVargraphic as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setTypeOfVargraphic_NotLikeSearch(String typeOfVargraphic, LikeSearchOption likeSearchOption) {
@@ -2360,7 +2360,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_VARGRAPHIC: {VARGRAPHIC(64)}
-     * @param typeOfVargraphic The value of typeOfVargraphic as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfVargraphic The value of typeOfVargraphic as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfVargraphic_PrefixSearch(String typeOfVargraphic) {
         setTypeOfVargraphic_LikeSearch(typeOfVargraphic, xcLSOPPre());
@@ -2390,7 +2390,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_LONG_VARGRAPHIC: {LONG VARGRAPHIC(32700)}
-     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as equal. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfLongVargraphic_Equal(String typeOfLongVargraphic) {
         doSetTypeOfLongVargraphic_Equal(fRES(typeOfLongVargraphic));
@@ -2403,7 +2403,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
      * TYPE_OF_LONG_VARGRAPHIC: {LONG VARGRAPHIC(32700)}
-     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as notEqual. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfLongVargraphic_NotEqual(String typeOfLongVargraphic) {
         doSetTypeOfLongVargraphic_NotEqual(fRES(typeOfLongVargraphic));
@@ -2416,7 +2416,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_LONG_VARGRAPHIC: {LONG VARGRAPHIC(32700)}
-     * @param typeOfLongVargraphicList The collection of typeOfLongVargraphic as inScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfLongVargraphicList The collection of typeOfLongVargraphic as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfLongVargraphic_InScope(Collection<String> typeOfLongVargraphicList) {
         doSetTypeOfLongVargraphic_InScope(typeOfLongVargraphicList);
@@ -2429,7 +2429,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
      * TYPE_OF_LONG_VARGRAPHIC: {LONG VARGRAPHIC(32700)}
-     * @param typeOfLongVargraphicList The collection of typeOfLongVargraphic as notInScope. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfLongVargraphicList The collection of typeOfLongVargraphic as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfLongVargraphic_NotInScope(Collection<String> typeOfLongVargraphicList) {
         doSetTypeOfLongVargraphic_NotInScope(typeOfLongVargraphicList);
@@ -2443,7 +2443,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_LONG_VARGRAPHIC: {LONG VARGRAPHIC(32700)} <br>
      * <pre>e.g. setTypeOfLongVargraphic_LikeSearch("xxx", op <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> op.<span style="color: #CC4747">likeContain()</span>);</pre>
-     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfLongVargraphic_LikeSearch(String typeOfLongVargraphic, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -2454,7 +2454,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_LONG_VARGRAPHIC: {LONG VARGRAPHIC(32700)} <br>
      * <pre>e.g. setTypeOfLongVargraphic_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as likeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of like-search. (NotNull)
      */
     public void setTypeOfLongVargraphic_LikeSearch(String typeOfLongVargraphic, LikeSearchOption likeSearchOption) {
@@ -2465,7 +2465,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_LONG_VARGRAPHIC: {LONG VARGRAPHIC(32700)}
-     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param opLambda The callback for option of like-search. (NotNull)
      */
     public void setTypeOfLongVargraphic_NotLikeSearch(String typeOfLongVargraphic, ConditionOptionCall<LikeSearchOption> opLambda) {
@@ -2476,7 +2476,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
      * And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_LONG_VARGRAPHIC: {LONG VARGRAPHIC(32700)}
-     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as notLikeSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setTypeOfLongVargraphic_NotLikeSearch(String typeOfLongVargraphic, LikeSearchOption likeSearchOption) {
@@ -2486,7 +2486,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
      * TYPE_OF_LONG_VARGRAPHIC: {LONG VARGRAPHIC(32700)}
-     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as prefixSearch. (NullAllowed: if null (or empty), no condition)
+     * @param typeOfLongVargraphic The value of typeOfLongVargraphic as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setTypeOfLongVargraphic_PrefixSearch(String typeOfLongVargraphic) {
         setTypeOfLongVargraphic_LikeSearch(typeOfLongVargraphic, xcLSOPPre());
@@ -2524,7 +2524,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorCheckCB> scalar_Equal() {
@@ -2539,7 +2539,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorCheckCB> scalar_NotEqual() {
@@ -2554,7 +2554,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorCheckCB> scalar_GreaterThan() {
@@ -2569,7 +2569,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorCheckCB> scalar_LessThan() {
@@ -2584,7 +2584,7 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
      *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
      * });
-     * </pre> 
+     * </pre>
      * @return The object to set up a function. (NotNull)
      */
     public HpSLCFunction<VendorCheckCB> scalar_GreaterEqual() {
@@ -2687,7 +2687,6 @@ public abstract class AbstractBsVendorCheckCQ extends AbstractConditionQuery {
      * <span style="color: #3F7E5E">//   end asc, ...</span>
      *
      * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder</span>(<span style="color: #553000">op</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
      *     <span style="color: #553000">op</span>.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);
