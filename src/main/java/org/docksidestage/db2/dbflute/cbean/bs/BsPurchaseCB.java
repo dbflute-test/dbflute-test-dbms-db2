@@ -82,7 +82,7 @@ public class BsPurchaseCB extends AbstractConditionBean {
     //                                                                 ===================
     /**
      * Accept the query condition of primary key as equal.
-     * @param purchaseId : PK, ID, NotNull, BIGINT(19). (NotNull)
+     * @param purchaseId : PK, NotNull, BIGINT(19). (NotNull)
      * @return this. (NotNull)
      */
     public PurchaseCB acceptPK(Long purchaseId) {
@@ -377,7 +377,7 @@ public class BsPurchaseCB extends AbstractConditionBean {
                              , HpSDRFunctionFactory sdrFuncFactory)
         { super(baseCB, qyCall, purpose, dbmetaProvider, sdrFuncFactory); }
         /**
-         * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+         * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnPurchaseId() { return doColumn("PURCHASE_ID"); }

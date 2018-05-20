@@ -19,7 +19,7 @@ import org.docksidestage.db2.dbflute.exentity.*;
  *     
  *
  * [identity]
- *     MEMBER_LOGIN_ID
+ *     
  *
  * [version-no]
  *     

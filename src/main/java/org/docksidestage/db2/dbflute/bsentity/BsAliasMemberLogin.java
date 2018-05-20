@@ -23,7 +23,7 @@ import org.docksidestage.db2.dbflute.exentity.*;
  *     
  *
  * [identity]
- *     MEMBER_LOGIN_ID
+ *     
  *
  * [version-no]
  *     
@@ -67,7 +67,7 @@ public abstract class BsAliasMemberLogin extends AbstractEntity implements Domai
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    /** (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)} */
+    /** (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)} */
     protected Long _memberLoginId;
 
     /** (会員ID)MEMBER_ID: {UQ+, NotNull, INTEGER(10), FK to ALIAS_MEMBER} */
@@ -401,7 +401,7 @@ public abstract class BsAliasMemberLogin extends AbstractEntity implements Domai
     //                                                                            Accessor
     //                                                                            ========
     /**
-     * [get] (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)} <br>
+     * [get] (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)} <br>
      * @return The value of the column 'MEMBER_LOGIN_ID'. (basically NotNull if selected: for the constraint)
      */
     public Long getMemberLoginId() {
@@ -410,7 +410,7 @@ public abstract class BsAliasMemberLogin extends AbstractEntity implements Domai
     }
 
     /**
-     * [set] (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)} <br>
+     * [set] (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)} <br>
      * @param memberLoginId The value of the column 'MEMBER_LOGIN_ID'. (basically NotNull if update: for the constraint)
      */
     public void setMemberLoginId(Long memberLoginId) {

@@ -25,7 +25,7 @@ import org.docksidestage.db2.dbflute.exentity.*;
  *     SEQ_PURCHASE
  *
  * [identity]
- *     PURCHASE_ID
+ *     
  *
  * [version-no]
  *     VERSION_NO
@@ -83,7 +83,7 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    /** PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)} */
+    /** PURCHASE_ID: {PK, NotNull, BIGINT(19)} */
     protected Long _purchaseId;
 
     /** (会員ID)MEMBER_ID: {UQ+, NotNull, INTEGER(10), FK to MEMBER} */
@@ -369,7 +369,7 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
     //                                                                            Accessor
     //                                                                            ========
     /**
-     * [get] PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)} <br>
+     * [get] PURCHASE_ID: {PK, NotNull, BIGINT(19)} <br>
      * @return The value of the column 'PURCHASE_ID'. (basically NotNull if selected: for the constraint)
      */
     public Long getPurchaseId() {
@@ -378,7 +378,7 @@ public abstract class BsPurchase extends AbstractEntity implements DomainEntity,
     }
 
     /**
-     * [set] PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)} <br>
+     * [set] PURCHASE_ID: {PK, NotNull, BIGINT(19)} <br>
      * @param purchaseId The value of the column 'PURCHASE_ID'. (basically NotNull if update: for the constraint)
      */
     public void setPurchaseId(Long purchaseId) {

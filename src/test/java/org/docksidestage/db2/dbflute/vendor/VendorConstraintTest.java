@@ -47,6 +47,8 @@ public class VendorConstraintTest extends UnitContainerTestCase {
     //                                                Insert
     //                                                ------
     public void test_insert_unique_constraint_OriginalException() {
+        // #thinking The memberId 20 is inserted first after ReplaceSchema? by jflute (2018/05/20)
+        // (second execution is success)
         // ## Arrange ##
         Member member = new Member();
         member.setMemberName("testName");
@@ -55,6 +57,7 @@ public class VendorConstraintTest extends UnitContainerTestCase {
 
         // ## Act & Assert ##
         memberBhv.insert(member);
+        log("generated memberId: {}", member.getMemberId());
         try {
             memberBhv.insert(member);
             fail();

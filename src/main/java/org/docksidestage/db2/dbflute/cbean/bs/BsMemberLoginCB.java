@@ -82,7 +82,7 @@ public class BsMemberLoginCB extends AbstractConditionBean {
     //                                                                 ===================
     /**
      * Accept the query condition of primary key as equal.
-     * @param memberLoginId (会員ログインID): PK, ID, NotNull, BIGINT(19). (NotNull)
+     * @param memberLoginId (会員ログインID): PK, NotNull, BIGINT(19). (NotNull)
      * @return this. (NotNull)
      */
     public MemberLoginCB acceptPK(Long memberLoginId) {
@@ -367,7 +367,7 @@ public class BsMemberLoginCB extends AbstractConditionBean {
                              , HpSDRFunctionFactory sdrFuncFactory)
         { super(baseCB, qyCall, purpose, dbmetaProvider, sdrFuncFactory); }
         /**
-         * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+         * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
          * @return The information object of specified column. (NotNull)
          */
         public SpecifiedColumn columnMemberLoginId() { return doColumn("MEMBER_LOGIN_ID"); }

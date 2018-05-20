@@ -45,7 +45,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
     //                                                                               =====
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @param purchaseId The value of purchaseId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setPurchaseId_Equal(Long purchaseId) {
@@ -58,7 +58,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
 
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @param purchaseId The value of purchaseId as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setPurchaseId_NotEqual(Long purchaseId) {
@@ -71,7 +71,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @param purchaseId The value of purchaseId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setPurchaseId_GreaterThan(Long purchaseId) {
@@ -80,7 +80,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @param purchaseId The value of purchaseId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setPurchaseId_LessThan(Long purchaseId) {
@@ -89,7 +89,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @param purchaseId The value of purchaseId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setPurchaseId_GreaterEqual(Long purchaseId) {
@@ -98,7 +98,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @param purchaseId The value of purchaseId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setPurchaseId_LessEqual(Long purchaseId) {
@@ -109,7 +109,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @param minNumber The min number of purchaseId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of purchaseId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
@@ -122,7 +122,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @param minNumber The min number of purchaseId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of purchaseId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
@@ -133,7 +133,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @param purchaseIdList The collection of purchaseId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setPurchaseId_InScope(Collection<Long> purchaseIdList) {
@@ -146,7 +146,7 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @param purchaseIdList The collection of purchaseId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setPurchaseId_NotInScope(Collection<Long> purchaseIdList) {
@@ -159,13 +159,13 @@ public abstract class AbstractBsPurchaseCQ extends AbstractConditionQuery {
 
     /**
      * IsNull {is null}. And OnlyOnceRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      */
     public void setPurchaseId_IsNull() { regPurchaseId(CK_ISN, DOBJ); }
 
     /**
      * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      */
     public void setPurchaseId_IsNotNull() { regPurchaseId(CK_ISNN, DOBJ); }
 

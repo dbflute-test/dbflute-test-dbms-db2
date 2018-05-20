@@ -32,7 +32,7 @@ import org.docksidestage.db2.dbflute.cbean.*;
  *     SEQ_MEMBER_LOGIN
  *
  * [identity]
- *     MEMBER_LOGIN_ID
+ *     
  *
  * [version-no]
  *     
@@ -203,7 +203,7 @@ public abstract class BsMemberLoginBhv extends AbstractBehaviorWritable<MemberLo
 
     /**
      * Select the entity by the primary-key value.
-     * @param memberLoginId (会員ログインID): PK, ID, NotNull, BIGINT(19). (NotNull)
+     * @param memberLoginId (会員ログインID): PK, NotNull, BIGINT(19). (NotNull)
      * @return The entity selected by the PK. (NullAllowed: if no data, it returns null)
      * @throws EntityDuplicatedException When the entity has been duplicated.
      * @throws SelectEntityConditionNotFoundException When the condition for selecting an entity is not found.

@@ -81,14 +81,14 @@ public class BsPurchaseCQ extends AbstractBsPurchaseCQ {
 
     /**
      * Add order-by as ascend. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @return this. (NotNull)
      */
     public BsPurchaseCQ addOrderBy_PurchaseId_Asc() { regOBA("PURCHASE_ID"); return this; }
 
     /**
      * Add order-by as descend. <br>
-     * PURCHASE_ID: {PK, ID, NotNull, BIGINT(19)}
+     * PURCHASE_ID: {PK, NotNull, BIGINT(19)}
      * @return this. (NotNull)
      */
     public BsPurchaseCQ addOrderBy_PurchaseId_Desc() { regOBD("PURCHASE_ID"); return this; }

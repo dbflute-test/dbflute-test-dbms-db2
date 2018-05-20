@@ -32,7 +32,7 @@ import org.docksidestage.db2.dbflute.cbean.*;
  *     SEQ_PURCHASE
  *
  * [identity]
- *     PURCHASE_ID
+ *     
  *
  * [version-no]
  *     VERSION_NO
@@ -203,7 +203,7 @@ public abstract class BsPurchaseBhv extends AbstractBehaviorWritable<Purchase, P
 
     /**
      * Select the entity by the primary-key value.
-     * @param purchaseId : PK, ID, NotNull, BIGINT(19). (NotNull)
+     * @param purchaseId : PK, NotNull, BIGINT(19). (NotNull)
      * @return The entity selected by the PK. (NullAllowed: if no data, it returns null)
      * @throws EntityDuplicatedException When the entity has been duplicated.
      * @throws SelectEntityConditionNotFoundException When the condition for selecting an entity is not found.

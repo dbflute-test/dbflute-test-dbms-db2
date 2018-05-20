@@ -19,7 +19,7 @@ import org.docksidestage.db2.dbflute.exentity.*;
  *     SEQ_PURCHASE
  *
  * [identity]
- *     PURCHASE_ID
+ *     
  *
  * [version-no]
  *     VERSION_NO

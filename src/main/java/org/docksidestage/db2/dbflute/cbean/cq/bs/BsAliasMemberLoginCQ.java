@@ -81,14 +81,14 @@ public class BsAliasMemberLoginCQ extends AbstractBsAliasMemberLoginCQ {
 
     /**
      * Add order-by as ascend. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @return this. (NotNull)
      */
     public BsAliasMemberLoginCQ addOrderBy_MemberLoginId_Asc() { regOBA("MEMBER_LOGIN_ID"); return this; }
 
     /**
      * Add order-by as descend. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @return this. (NotNull)
      */
     public BsAliasMemberLoginCQ addOrderBy_MemberLoginId_Desc() { regOBD("MEMBER_LOGIN_ID"); return this; }

@@ -45,7 +45,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
     //                                                                               =====
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @param memberLoginId The value of memberLoginId as equal. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberLoginId_Equal(Long memberLoginId) {
@@ -58,7 +58,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @param memberLoginId The value of memberLoginId as notEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberLoginId_NotEqual(Long memberLoginId) {
@@ -71,7 +71,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @param memberLoginId The value of memberLoginId as greaterThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberLoginId_GreaterThan(Long memberLoginId) {
@@ -80,7 +80,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @param memberLoginId The value of memberLoginId as lessThan. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberLoginId_LessThan(Long memberLoginId) {
@@ -89,7 +89,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @param memberLoginId The value of memberLoginId as greaterEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberLoginId_GreaterEqual(Long memberLoginId) {
@@ -98,7 +98,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @param memberLoginId The value of memberLoginId as lessEqual. (basically NotNull: error as default, or no condition as option)
      */
     public void setMemberLoginId_LessEqual(Long memberLoginId) {
@@ -109,7 +109,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @param minNumber The min number of memberLoginId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of memberLoginId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param opLambda The callback for option of range-of. (NotNull)
@@ -122,7 +122,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
      * RangeOf with various options. (versatile) <br>
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
      * And NullIgnored, OnlyOnceRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @param minNumber The min number of memberLoginId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param maxNumber The max number of memberLoginId. (basically NotNull: if op.allowOneSide(), null allowed)
      * @param rangeOfOption The option of range-of. (NotNull)
@@ -133,7 +133,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @param memberLoginIdList The collection of memberLoginId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setMemberLoginId_InScope(Collection<Long> memberLoginIdList) {
@@ -146,7 +146,7 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      * @param memberLoginIdList The collection of memberLoginId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
      */
     public void setMemberLoginId_NotInScope(Collection<Long> memberLoginIdList) {
@@ -159,13 +159,13 @@ public abstract class AbstractBsMemberLoginCQ extends AbstractConditionQuery {
 
     /**
      * IsNull {is null}. And OnlyOnceRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      */
     public void setMemberLoginId_IsNull() { regMemberLoginId(CK_ISN, DOBJ); }
 
     /**
      * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
-     * (会員ログインID)MEMBER_LOGIN_ID: {PK, ID, NotNull, BIGINT(19)}
+     * (会員ログインID)MEMBER_LOGIN_ID: {PK, NotNull, BIGINT(19)}
      */
     public void setMemberLoginId_IsNotNull() { regMemberLoginId(CK_ISNN, DOBJ); }
 

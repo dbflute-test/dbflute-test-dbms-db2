@@ -10,6 +10,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.stream.Collectors;
 
 import org.dbflute.util.DfTypeUtil;
 import org.docksidestage.db2.dbflute.allcommon.CDef;
@@ -145,20 +146,27 @@ public class WxSequenceCacheTest extends UnitContainerTestCase {
     //                                                                              Insert
     //                                                                              ======
     public void test_insert_basic() {
+        String beforeIds = memberLoginBhv.selectList(cb -> {
+            cb.specify().columnMemberLoginId();
+            cb.query().addOrderBy_MemberLoginId_Asc();
+        }).mappingList(login -> {
+            return String.valueOf(login.getMemberLoginId());
+        }).stream().collect(Collectors.joining(", "));
+        log("loginIds:{}", beforeIds);
         {
             // ## Arrange ##
-            MemberLogin memberLogin = new MemberLogin();
-            memberLogin.setLoginDatetime(DfTypeUtil.toTimestamp("2043/12/21 12:34:56"));
-            memberLogin.setMemberId(3);
-            memberLogin.setMobileLoginFlg_True();
-            memberLogin.setLoginMemberStatusCodeAsMemberStatus(CDef.MemberStatus.Formalized);
+            MemberLogin login = new MemberLogin();
+            login.setLoginDatetime(DfTypeUtil.toTimestamp("1988/12/21 12:34:56"));
+            login.setMemberId(3);
+            login.setMobileLoginFlg_True();
+            login.setLoginMemberStatusCodeAsMemberStatus(CDef.MemberStatus.Formalized);
 
             // ## Act ##
-            memberLoginBhv.insert(memberLogin);
+            memberLoginBhv.insert(login);
 
             // ## Assert ##
-            log(memberLogin);
-            Long memberLoginId = memberLogin.getMemberLoginId();
+            log(login);
+            Long memberLoginId = login.getMemberLoginId();
             assertNotNull(memberLoginId);
         }
         {
